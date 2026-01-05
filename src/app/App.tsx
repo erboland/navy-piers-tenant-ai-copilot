@@ -1,5 +1,5 @@
 import * as React from "react";
-import { MessageSquare, Database } from "lucide-react";
+import { MessageSquare, Database, X } from "lucide-react";
 import { ChatInput } from "./components/chat-input";
 import { ChatMessage } from "./components/chat-message";
 import { DataExplorer } from "./components/data-explorer";
@@ -23,12 +23,16 @@ interface Message {
   citations?: string[];
 }
 
+type SummaryType = "executive" | "standard" | null;
+
 export default function App() {
   const [selectedVendor, setSelectedVendor] = React.useState("");
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [activeView, setActiveView] = React.useState<"chat" | "data">("chat");
+  const [currentSummaryType, setCurrentSummaryType] = React.useState<SummaryType>(null);
   const messagesEndRef = React.useRef<HTMLDivElement>(null);
+  const previousVendorRef = React.useRef<string>("");
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -37,6 +41,15 @@ export default function App() {
   React.useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Clear messages when vendor changes
+  React.useEffect(() => {
+    if (selectedVendor && previousVendorRef.current !== selectedVendor && previousVendorRef.current !== "") {
+      setMessages([]);
+      setCurrentSummaryType(null);
+    }
+    previousVendorRef.current = selectedVendor;
+  }, [selectedVendor]);
 
   const handleSendMessage = (content: string) => {
     if (!selectedVendor) {
@@ -49,6 +62,8 @@ export default function App() {
     const userMessage: Message = { role: "user", content };
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
+    // Clear summary type when sending custom message
+    setCurrentSummaryType(null);
 
     // Simulate AI response delay
     setTimeout(() => {
@@ -69,6 +84,7 @@ export default function App() {
     setTimeout(() => {
       const summary = generateExecutiveSummary(vendor.name);
       setMessages([summary]);
+      setCurrentSummaryType("executive");
       setIsLoading(false);
     }, 1500);
   };
@@ -84,8 +100,14 @@ export default function App() {
     setTimeout(() => {
       const summary = generateStandardSummary(vendor.name);
       setMessages([summary]);
+      setCurrentSummaryType("standard");
       setIsLoading(false);
     }, 1500);
+  };
+
+  const handleClearMessages = () => {
+    setMessages([]);
+    setCurrentSummaryType(null);
   };
 
   const showInitialState = messages.length === 0 && !isLoading;
@@ -164,6 +186,46 @@ export default function App() {
             <>
               {activeView === "chat" ? (
                 <div className="h-full flex flex-col">
+                  {/* Summary Navigation Bar */}
+                  {messages.length > 0 && !isLoading && (
+                    <div className="border-b bg-card shrink-0">
+                      <div className="container max-w-4xl mx-auto px-4 py-3">
+                        <div className="flex items-center justify-between gap-4">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground">Summary Type:</span>
+                            <div className="flex gap-2">
+                              <Button
+                                variant={currentSummaryType === "executive" ? "default" : "outline"}
+                                size="sm"
+                                onClick={handleExecutiveSummary}
+                                disabled={isLoading}
+                              >
+                                Executive Summary
+                              </Button>
+                              <Button
+                                variant={currentSummaryType === "standard" ? "default" : "outline"}
+                                size="sm"
+                                onClick={handleStandardSummary}
+                                disabled={isLoading}
+                              >
+                                Standard Summary
+                              </Button>
+                            </div>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={handleClearMessages}
+                            disabled={isLoading}
+                            className="gap-2"
+                          >
+                            <X className="h-4 w-4" />
+                            Clear
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <div className="flex-1 overflow-hidden">
                     <ScrollArea className="h-full">
                       {showInitialState ? (
