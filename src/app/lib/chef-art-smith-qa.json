@@ -1,0 +1,21 @@
+{
+  "tenant": "Chef Art Smith's Reunion",
+  "questions": [
+    {
+      "question": "What is the legal name of the tenant?",
+      "answer": "The legal name of the tenant is Art Smith Reunion, LLC, operating as Chef Art Smith's Reunion restaurant."
+    },
+    {
+      "question": "What was the First Lease Year?",
+      "answer": "The First Lease Year commenced on May 11, 2020, as indicated in the lease execution date. This marks the beginning of the initial lease term."
+    },
+    {
+      "question": "What is the Tenant Notice Address?",
+      "answer": "The Tenant Notice Address is:\n\nArt Smith Reunion, LLC\nAttention: Arthur Smith\n600 East Grand Avenue\nChicago, IL 60611\n\nAll formal notices, demands, and communications must be sent to this address via certified mail, return receipt requested, or by recognized overnight courier service."
+    },
+    {
+      "question": "When is the Premises delivery date?",
+      "answer": "The Premises delivery date was established as May 1, 2020. The landlord delivered possession of the premises to the tenant on this date, allowing for tenant improvements and preparations prior to the lease commencement on May 11, 2020."
+    }
+  ]
+}

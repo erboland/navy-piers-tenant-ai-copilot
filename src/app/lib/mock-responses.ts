@@ -1,7 +1,42 @@
+import chefArtSmithQA from './chef-art-smith-qa.json';
+
 interface Message {
   role: "user" | "assistant";
   content: string;
   citations?: string[];
+}
+
+// Function to check for predefined Q&A matches
+function checkPredefinedQuestions(question: string, vendorName: string): Message | null {
+  // Normalize the question for matching
+  const normalizedQuestion = question.toLowerCase().trim();
+  
+  // Check if this is for Chef Art Smith
+  if (vendorName.toLowerCase().includes('chef art smith') || 
+      vendorName.toLowerCase().includes('reunion')) {
+    
+    // Find exact or similar question match
+    for (const qa of chefArtSmithQA.questions) {
+      const predefinedQuestion = qa.question.toLowerCase().trim();
+      
+      // Check for exact match or high similarity
+      if (normalizedQuestion === predefinedQuestion ||
+          normalizedQuestion.includes(predefinedQuestion) ||
+          predefinedQuestion.includes(normalizedQuestion)) {
+        
+        return {
+          role: "assistant",
+          content: `## ${qa.question}\n\n${qa.answer}`,
+          citations: [
+            "Chef Art Smith Lease - Executed May 11, 2020",
+            "Lease Agreement - Pages 1-47",
+          ],
+        };
+      }
+    }
+  }
+  
+  return null;
 }
 
 export function generateExecutiveSummary(vendorName: string): Message {
@@ -166,6 +201,12 @@ Tenant approved for kitchen expansion project (estimated completion Q2 2026, bud
 }
 
 export function generateCustomResponse(question: string, vendorName: string): Message {
+  // First check for predefined Q&A matches
+  const predefinedResponse = checkPredefinedQuestions(question, vendorName);
+  if (predefinedResponse) {
+    return predefinedResponse;
+  }
+  
   // Simple keyword-based responses for demo purposes
   const lowerQuestion = question.toLowerCase();
 
