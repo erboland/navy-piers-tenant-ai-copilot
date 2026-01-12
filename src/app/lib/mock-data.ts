@@ -224,7 +224,7 @@ export const mockOperationalDetails: OperationalDetail[] = [
     vendor: "Chef Art Smith's Reunion",
     category: "Square Footage",
     detail: "Total Area",
-    value: "3,200 sq ft",
+    value: "Approximately 3,200 sq ft",
   },
   {
     id: "22",

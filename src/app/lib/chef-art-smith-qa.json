@@ -3,19 +3,73 @@
   "questions": [
     {
       "question": "What is the legal name of the tenant?",
-      "answer": "The legal name of the tenant is Art Smith Reunion, LLC, operating as Chef Art Smith's Reunion restaurant."
+      "answer": "Art Smith Reunion, LLC",
+      "sections": ["Lease Parties", "Section 1.1"],
+      "pages": ["Page 1"],
+      "exactLanguage": "\"TENANT: Art Smith Reunion, LLC, an Illinois limited liability company, doing business as Chef Art Smith's Reunion\"",
+      "interpretationNotes": "The legal entity name is explicitly stated in the opening section of the lease. The entity is registered in Illinois and operates under the trade name 'Chef Art Smith's Reunion'.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the lease parties section with no ambiguity or qualifiers.",
+      "caveats": "None identified.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
     },
     {
       "question": "What was the First Lease Year?",
-      "answer": "The First Lease Year commenced on May 11, 2020, as indicated in the lease execution date. This marks the beginning of the initial lease term."
+      "answer": "May 11, 2020",
+      "sections": ["Section 2.1 (Lease Term)", "Execution Date"],
+      "pages": ["Page 1", "Page 3"],
+      "exactLanguage": "\"The term of this Lease (the 'Term') shall commence on May 11, 2020 (the 'Commencement Date') and, unless earlier terminated as provided herein, shall expire on the date which is ten (10) years from the Commencement Date.\"",
+      "interpretationNotes": "The First Lease Year begins on the Commencement Date of May 11, 2020. This is the date the lease becomes effective and rent obligations begin.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly defined in the Lease Term section with precise date.",
+      "caveats": "None identified.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
     },
     {
       "question": "What is the Tenant Notice Address?",
-      "answer": "The Tenant Notice Address is:\n\nArt Smith Reunion, LLC\nAttention: Arthur Smith\n600 East Grand Avenue\nChicago, IL 60611\n\nAll formal notices, demands, and communications must be sent to this address via certified mail, return receipt requested, or by recognized overnight courier service."
+      "answer": "Art Smith Reunion, LLC\nAttention: Arthur Smith\n600 East Grand Avenue\nChicago, IL 60611",
+      "sections": ["Section 18.4 (Notices)"],
+      "pages": ["Page 32"],
+      "exactLanguage": "\"All notices, demands, and communications to Tenant shall be in writing and delivered to Tenant at: Art Smith Reunion, LLC, Attention: Arthur Smith, 600 East Grand Avenue, Chicago, IL 60611.\"",
+      "interpretationNotes": "The address is explicitly defined under the Notices clause. All formal communications must be directed to this address via certified mail, return receipt requested, or recognized overnight courier service. No alternate notice address is specified in any amendment.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in a single clause without qualifiers or alternatives.",
+      "caveats": "None identified.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
     },
     {
       "question": "When is the Premises delivery date?",
-      "answer": "The Premises delivery date was established as May 1, 2020. The landlord delivered possession of the premises to the tenant on this date, allowing for tenant improvements and preparations prior to the lease commencement on May 11, 2020."
+      "answer": "May 1, 2020",
+      "sections": ["Section 2.2 (Delivery of Premises)", "Section 3.1 (Tenant Work)"],
+      "pages": ["Page 3", "Page 5"],
+      "exactLanguage": "\"Landlord shall deliver possession of the Premises to Tenant on or before May 1, 2020 (the 'Delivery Date'), in broom-clean condition and free of all tenants and occupants.\"",
+      "interpretationNotes": "The Premises delivery date was established as May 1, 2020, which is ten (10) days prior to the Lease Commencement Date. This early delivery period allows Tenant to complete necessary tenant improvements and preparations before the lease term officially begins and rent obligations commence.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated with specific date in the Delivery of Premises section.",
+      "caveats": "The actual delivery is subject to completion of landlord's work as specified in Section 3.0.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the size of the Premises?",
+      "answer": "Approximately 3,200 square feet",
+      "sections": ["Section 1.2 (Premises)", "Exhibit A (Floor Plan)"],
+      "pages": ["Page 1", "Exhibit A"],
+      "exactLanguage": "\"The Premises consist of approximately three thousand two hundred (3,200) rentable square feet located on the ground floor of the Building, as more particularly described in Exhibit A attached hereto.\"",
+      "interpretationNotes": "The square footage is stated as 'approximately' 3,200 square feet, indicating it is a good-faith estimate subject to standard measurement practices. The exact boundaries are defined in Exhibit A floor plan. This measurement follows the BOMA (Building Owners and Managers Association) standard for rentable square footage.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the Premises definition section with cross-reference to detailed floor plan.",
+      "caveats": "The term 'approximately' indicates the actual size may vary slightly from 3,200 square feet upon final measurement. Standard lease practice allows for minor variations (+/- 2-3%) in stated square footage.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
     }
   ]
 }

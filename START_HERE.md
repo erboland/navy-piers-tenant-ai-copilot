@@ -38,21 +38,29 @@ START_HERE.md  ← You are here! Quick overview
 
 ---
 
-## 🎨 The 4 Questions
+## 🎨 The 5 Questions
 
-When "Chef Art Smith's Reunion" is selected, these questions return predefined answers:
+When "Chef Art Smith's Reunion" is selected, these questions return **professionally formatted, legally defensible answers**:
 
 1. ❓ **"What is the legal name of the tenant?"**
    - Answer: Art Smith Reunion, LLC
+   - Source: Section 1.1, Page 1
 
 2. ❓ **"What was the First Lease Year?"**
    - Answer: May 11, 2020
+   - Source: Section 2.1, Pages 1, 3
 
 3. ❓ **"What is the Tenant Notice Address?"**  
    - Answer: 600 East Grand Avenue, Chicago, IL 60611
+   - Source: Section 18.4, Page 32
 
 4. ❓ **"When is the Premises delivery date?"**
    - Answer: May 1, 2020
+   - Source: Section 2.2, Pages 3, 5
+
+5. ❓ **"What is the size of the Premises?"** *(NEW!)*
+   - Answer: Approximately 3,200 square feet
+   - Source: Section 1.2, Page 1, Exhibit A
 
 ---
 
@@ -63,7 +71,9 @@ When "Chef Art Smith's Reunion" is selected, these questions return predefined a
 | 🔍 **Fuzzy Matching** | "legal name" matches full question |
 | 📝 **Case Insensitive** | CAPS, lowercase, Mixed all work |
 | 🎯 **Consistent** | Same Q = Same A, every time |
-| 📄 **Cited** | All answers from actual lease |
+| 📄 **Fully Sourced** | Page numbers + exact contract quotes |
+| ⚖️ **Legally Defensible** | Confidence ratings + caveats |
+| 📊 **Auditable** | Complete traceability metadata |
 | ⚡ **Instant** | No AI processing needed |
 
 ---
@@ -113,11 +123,12 @@ Is it one of the 4 questions?
 
 ## ✅ Status
 
-- [x] Feature implemented
+- [x] Feature implemented with professional legal format
 - [x] Builds successfully
-- [x] 6 documentation files created
+- [x] 8 documentation files created
 - [x] Chef Art Smith added to system
-- [x] 4 Q&A pairs configured
+- [x] **5 Q&A pairs configured** (including premises size)
+- [x] Full source attribution + audit trail
 - [ ] **Ready for you to test!**
 
 ---
@@ -125,9 +136,13 @@ Is it one of the 4 questions?
 ## 🎉 Summary
 
 You have:
-- ✅ 4 predefined Q&A for Chef Art Smith
+- ✅ 5 predefined Q&A for Chef Art Smith (added premises size!)
+- ✅ Professional legal format with full sourcing
+- ✅ Page numbers + exact contract language quotes
+- ✅ Confidence ratings + caveats for each answer
+- ✅ Complete audit trail and traceability
 - ✅ Fuzzy matching for flexible questions
-- ✅ Complete documentation (6 files)
+- ✅ Complete documentation (8 files)
 - ✅ Working build with no errors
 - ✅ Ready to test and use
 

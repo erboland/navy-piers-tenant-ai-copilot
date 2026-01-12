@@ -24,12 +24,54 @@ function checkPredefinedQuestions(question: string, vendorName: string): Message
           normalizedQuestion.includes(predefinedQuestion) ||
           predefinedQuestion.includes(normalizedQuestion)) {
         
+        // Format the response with full sourcing and audit trail
+        const response = `## ${qa.question}
+
+**${qa.answer}**
+
+---
+
+## Source & Evidence
+
+- **Document Section(s):** ${qa.sections.join(', ')}
+- **Page(s):** ${qa.pages.join(', ')}
+- **Exact Contract Language:**
+  > ${qa.exactLanguage}
+
+---
+
+## Interpretation Notes
+
+${qa.interpretationNotes}
+
+---
+
+## Confidence
+
+**${qa.confidence}**
+
+- Reason: ${qa.confidenceReason}
+
+---
+
+## Caveats & Exceptions
+
+${qa.caveats}
+
+---
+
+## Traceability Metadata
+
+- **Document ID:** ${qa.documentId}
+- **Definition Type:** ${qa.definitionType}
+- **Review Required:** ${qa.reviewRequired ? 'Yes' : 'No'}`;
+        
         return {
           role: "assistant",
-          content: `## ${qa.question}\n\n${qa.answer}`,
+          content: response,
           citations: [
             "Chef Art Smith Lease - Executed May 11, 2020",
-            "Lease Agreement - Pages 1-47",
+            `${qa.sections.join(', ')} - ${qa.pages.join(', ')}`,
           ],
         };
       }
