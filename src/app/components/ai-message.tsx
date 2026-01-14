@@ -110,7 +110,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between hover:bg-blue-50 dark:hover:bg-blue-950/20 px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-0 py-3 h-auto font-normal"
               >
                 <div className="flex items-center gap-2">
                   {sourceOpen ? (
@@ -126,7 +126,7 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 space-y-3 bg-blue-50/50 dark:bg-blue-950/10 -mx-6 px-6 overflow-hidden">
+            <CollapsibleContent className="pt-4 pb-4 space-y-3 -mx-6 px-6 overflow-hidden">
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <FileText className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
@@ -160,7 +160,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between hover:bg-muted px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-0 py-3 h-auto font-normal"
               >
                 <div className="flex items-center gap-2">
                   {interpretationOpen ? (
@@ -176,7 +176,7 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 bg-muted/30 -mx-6 px-6 overflow-hidden">
+            <CollapsibleContent className="pt-4 pb-4 -mx-6 px-6 overflow-hidden">
               <p className="text-sm text-muted-foreground leading-relaxed break-words">
                 {interpretation}
               </p>
@@ -188,7 +188,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between hover:bg-yellow-50 dark:hover:bg-yellow-950/20 px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-0 py-3 h-auto font-normal"
               >
                 <div className="flex items-center gap-2">
                   {confidenceOpen ? (
@@ -204,7 +204,7 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 space-y-4 bg-yellow-50/50 dark:bg-yellow-950/10 -mx-6 px-6 overflow-hidden">
+            <CollapsibleContent className="pt-4 pb-4 space-y-4 -mx-6 px-6 overflow-hidden">
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-500 mt-0.5 shrink-0" />
