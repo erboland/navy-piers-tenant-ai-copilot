@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MessageSquare, Database, X } from "lucide-react";
 import { ChatInput } from "./components/chat-input";
-import { ChatMessage } from "./components/chat-message";
+import { EnhancedChatMessage, type EnhancedMessage } from "./components/enhanced-chat-message";
 import { DataExplorer } from "./components/data-explorer";
 import { LoadingState } from "./components/loading-state";
 import { QuickStartButtons } from "./components/quick-start-buttons";
@@ -12,22 +12,16 @@ import { Button } from "./components/ui/button";
 import { cn } from "./lib/utils";
 import { mockVendors } from "./lib/mock-data";
 import {
-  generateCustomResponse,
+  generateEnhancedCustomResponse,
   generateExecutiveSummary,
   generateStandardSummary,
-} from "./lib/mock-responses";
-
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-  citations?: string[];
-}
+} from "./lib/enhanced-mock-responses";
 
 type SummaryType = "executive" | "standard" | null;
 
 export default function App() {
   const [selectedVendor, setSelectedVendor] = React.useState("");
-  const [messages, setMessages] = React.useState<Message[]>([]);
+  const [messages, setMessages] = React.useState<EnhancedMessage[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [activeView, setActiveView] = React.useState<"chat" | "data">("chat");
   const [currentSummaryType, setCurrentSummaryType] = React.useState<SummaryType>(null);
@@ -59,7 +53,7 @@ export default function App() {
     const vendor = mockVendors.find((v) => v.id === selectedVendor);
     if (!vendor) return;
 
-    const userMessage: Message = { role: "user", content };
+    const userMessage: EnhancedMessage = { role: "user", content };
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
     // Clear summary type when sending custom message
@@ -67,7 +61,7 @@ export default function App() {
 
     // Simulate AI response delay
     setTimeout(() => {
-      const aiResponse = generateCustomResponse(content, vendor.name);
+      const aiResponse = generateEnhancedCustomResponse(content, vendor.name);
       setMessages((prev) => [...prev, aiResponse]);
       setIsLoading(false);
     }, 1000);
@@ -250,7 +244,7 @@ export default function App() {
                         <div className="container max-w-4xl mx-auto px-4 py-8 pb-4">
                           <div className="space-y-6">
                             {messages.map((message, index) => (
-                              <ChatMessage key={index} {...message} />
+                              <EnhancedChatMessage key={index} message={message} />
                             ))}
                             {isLoading && (
                               <div className="flex justify-start">
