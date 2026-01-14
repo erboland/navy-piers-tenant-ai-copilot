@@ -71,13 +71,6 @@ export function AIMessage({
 
   return (
     <div className="flex flex-col gap-3 w-full max-w-4xl mx-auto">
-      {/* User Question */}
-      <div className="flex justify-end">
-        <div className="bg-muted rounded-2xl px-4 py-3 max-w-[85%] md:max-w-[70%]">
-          <p className="text-sm text-foreground">{question}</p>
-        </div>
-      </div>
-
       {/* AI Answer Card */}
       <Card className="shadow-sm border-border">
         {/* Header */}
@@ -133,28 +126,28 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 space-y-3 bg-blue-50/50 dark:bg-blue-950/10 -mx-6 px-6">
+            <CollapsibleContent className="pt-4 pb-4 space-y-3 bg-blue-50/50 dark:bg-blue-950/10 -mx-6 px-6 overflow-hidden">
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <FileText className="h-4 w-4 text-muted-foreground mt-0.5" />
-                  <div>
+                  <FileText className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-muted-foreground">Document Section(s)</p>
-                    <p className="text-sm text-foreground">{source.sections.join(", ")}</p>
+                    <p className="text-sm text-foreground break-words">{source.sections.join(", ")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <FileText className="h-4 w-4 text-muted-foreground mt-0.5" />
-                  <div>
+                  <FileText className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-muted-foreground">Page(s)</p>
-                    <p className="text-sm text-foreground">{source.pages.join(", ")}</p>
+                    <p className="text-sm text-foreground break-words">{source.pages.join(", ")}</p>
                   </div>
                 </div>
               </div>
               <Separator />
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs font-medium text-muted-foreground mb-2">Exact Contract Language</p>
-                <blockquote className="border-l-2 border-primary/30 pl-4 py-2 bg-background rounded-r-lg">
-                  <p className="text-sm italic text-muted-foreground leading-relaxed">
+                <blockquote className="border-l-2 border-primary/30 pl-4 py-2 bg-background rounded-r-lg overflow-hidden">
+                  <p className="text-sm italic text-muted-foreground leading-relaxed break-words whitespace-normal">
                     {source.exactLanguage}
                   </p>
                 </blockquote>
@@ -183,8 +176,8 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 bg-muted/30 -mx-6 px-6">
-              <p className="text-sm text-muted-foreground leading-relaxed">
+            <CollapsibleContent className="pt-4 pb-4 bg-muted/30 -mx-6 px-6 overflow-hidden">
+              <p className="text-sm text-muted-foreground leading-relaxed break-words">
                 {interpretation}
               </p>
             </CollapsibleContent>
@@ -211,13 +204,13 @@ export function AIMessage({
               </Button>
             </CollapsibleTrigger>
             <Separator />
-            <CollapsibleContent className="pt-4 pb-4 space-y-4 bg-yellow-50/50 dark:bg-yellow-950/10 -mx-6 px-6">
+            <CollapsibleContent className="pt-4 pb-4 space-y-4 bg-yellow-50/50 dark:bg-yellow-950/10 -mx-6 px-6 overflow-hidden">
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-500 mt-0.5" />
-                  <div className="flex-1">
+                  <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-500 mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium">Confidence: {confidence.level}</p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-muted-foreground mt-1 break-words">
                       Reason: {confidence.reason}
                     </p>
                   </div>
@@ -226,20 +219,20 @@ export function AIMessage({
               <Separator />
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <AlertCircle className="h-4 w-4 text-orange-600 dark:text-orange-500 mt-0.5" />
-                  <div className="flex-1">
+                  <AlertCircle className="h-4 w-4 text-orange-600 dark:text-orange-500 mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium">Caveats & Exceptions</p>
-                    <p className="text-sm text-muted-foreground mt-1">{caveats}</p>
+                    <p className="text-sm text-muted-foreground mt-1 break-words">{caveats}</p>
                   </div>
                 </div>
               </div>
               <Separator />
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <Info className="h-4 w-4 text-blue-600 dark:text-blue-500 mt-0.5" />
-                  <div className="flex-1">
+                  <Info className="h-4 w-4 text-blue-600 dark:text-blue-500 mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium mb-2">Traceability Metadata</p>
-                    <ul className="space-y-1 text-sm text-muted-foreground">
+                    <ul className="space-y-1 text-sm text-muted-foreground break-words">
                       <li>• Document ID: {metadata.documentId}</li>
                       <li>• Definition Type: {metadata.definitionType}</li>
                       <li>• Review Required: {metadata.reviewRequired ? "Yes" : "No"}</li>
