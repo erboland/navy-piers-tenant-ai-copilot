@@ -110,7 +110,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-1 py-3 h-auto font-normal cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   {sourceOpen ? (
@@ -160,7 +160,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-1 py-3 h-auto font-normal cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   {interpretationOpen ? (
@@ -188,7 +188,7 @@ export function AIMessage({
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
-                className="w-full justify-between px-0 py-3 h-auto font-normal"
+                className="w-full justify-between px-1 py-3 h-auto font-normal cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   {confidenceOpen ? (
