@@ -1,4 +1,5 @@
 import * as React from "react";
+import ReactMarkdown from "react-markdown";
 import { cn } from "@/app/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/app/components/ui/card";
 import { Badge } from "@/app/components/ui/badge";
@@ -97,9 +98,44 @@ export function AIMessage({
         {/* Direct Answer */}
         <CardContent className="pb-4">
           <div className="relative pl-4 border-l-4 border-primary">
-            <p className="text-lg font-semibold leading-relaxed text-foreground whitespace-pre-line">
-              {answer}
-            </p>
+            <div className="prose prose-sm max-w-none dark:prose-invert prose-p:text-lg prose-p:font-semibold prose-p:leading-relaxed prose-p:my-2 prose-ul:my-2 prose-li:my-1 prose-strong:font-bold">
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => (
+                    <p className="text-lg font-semibold leading-relaxed text-foreground my-2">
+                      {children}
+                    </p>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="text-base font-normal leading-relaxed text-foreground my-2 ml-4 space-y-1">
+                      {children}
+                    </ul>
+                  ),
+                  li: ({ children }) => (
+                    <li className="text-base font-normal">
+                      {children}
+                    </li>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-bold text-foreground">
+                      {children}
+                    </strong>
+                  ),
+                  code: ({ children, className }) => {
+                    const isInline = !className;
+                    return isInline ? (
+                      <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal">
+                        {children}
+                      </code>
+                    ) : (
+                      <code className={className}>{children}</code>
+                    );
+                  },
+                }}
+              >
+                {answer}
+              </ReactMarkdown>
+            </div>
           </div>
         </CardContent>
 
