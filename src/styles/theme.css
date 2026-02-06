@@ -2,12 +2,16 @@
 
 :root {
   /* Navy Pier Design System - Color Tokens */
-  --color-pier-navy: #002b5b;
+  --color-pier-navy: #001E62; /* Updated to official Navy Pier Blue */
   --color-deep-navy: #001a38;
-  --color-lake-blue: #0077b6;
+  --color-lake-blue: #0077b6; /* Lakeshore Blue */
+  --color-lakeshore-blue: #0077b6; /* Alias */
   --color-harbor-teal: #00a5a8;
   --color-sky: #e6f4fa;
   --color-pier-red: #d62828;
+  --color-firework-magenta: #C51C8A; /* New Official Color */
+  --color-leaf-green: #4CAF50; /* New Official Color */
+  --color-carousel-yellow: #FFC107; /* New Official Color */
   --color-sunset-orange: #f77f00;
   --color-sand: #f4e9d8;
   --color-white: #ffffff;
@@ -100,8 +104,8 @@
   --chart-1: var(--color-lake-blue);
   --chart-2: var(--color-harbor-teal);
   --chart-3: var(--color-pier-navy);
-  --chart-4: var(--color-sunset-orange);
-  --chart-5: var(--color-success);
+  --chart-4: var(--color-carousel-yellow); /* Updated to use brand color */
+  --chart-5: var(--color-leaf-green); /* Updated to use brand color */
   --sidebar: var(--color-white);
   --sidebar-foreground: var(--color-charcoal);
   --sidebar-primary: var(--color-pier-navy);
@@ -136,8 +140,8 @@
   --chart-1: var(--color-lake-blue);
   --chart-2: var(--color-harbor-teal);
   --chart-3: var(--color-pier-navy);
-  --chart-4: var(--color-sunset-orange);
-  --chart-5: var(--color-success);
+  --chart-4: var(--color-carousel-yellow);
+  --chart-5: var(--color-leaf-green);
   --sidebar: var(--color-deep-navy);
   --sidebar-foreground: var(--color-white);
   --sidebar-primary: var(--color-lake-blue);
@@ -187,6 +191,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* New brand colors available in theme */
+  --color-pier-navy: var(--color-pier-navy);
+  --color-firework-magenta: var(--color-firework-magenta);
+  --color-leaf-green: var(--color-leaf-green);
+  --color-carousel-yellow: var(--color-carousel-yellow);
 }
 
 @layer base {

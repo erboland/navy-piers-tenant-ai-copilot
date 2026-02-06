@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { cn } from "../lib/utils";
 
 interface ChatMessageProps {
@@ -12,7 +13,7 @@ export function ChatMessage({ role, content, citations }: ChatMessageProps) {
     <div
       className={cn(
         "flex w-full",
-        role === "user" ? "justify-end" : "justify-start"
+        role === "user" ? "justify-end" : "justify-start",
       )}
     >
       <div
@@ -20,24 +21,21 @@ export function ChatMessage({ role, content, citations }: ChatMessageProps) {
           "rounded-lg px-6 py-4 shadow-sm",
           role === "user"
             ? "bg-primary text-primary-foreground max-w-[80%]"
-            : "bg-card border max-w-full"
+            : "bg-card border max-w-full",
         )}
       >
         {role === "assistant" ? (
           <div className="prose prose-sm max-w-none dark:prose-invert prose-headings:scroll-m-20 prose-h1:text-4xl prose-h1:tracking-tight prose-h2:text-3xl prose-h2:tracking-tight prose-h3:text-2xl prose-h3:tracking-tight">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={{
                 table: ({ children }) => (
                   <div className="my-6 w-full overflow-y-auto">
-                    <table className="w-full">
-                      {children}
-                    </table>
+                    <table className="w-full">{children}</table>
                   </div>
                 ),
                 thead: ({ children }) => (
-                  <thead className="border-b">
-                    {children}
-                  </thead>
+                  <thead className="border-b">{children}</thead>
                 ),
                 tbody: ({ children }) => (
                   <tbody className="[&_tr:last-child]:border-0">
@@ -75,11 +73,15 @@ export function ChatMessage({ role, content, citations }: ChatMessageProps) {
             </ReactMarkdown>
             {citations && citations.length > 0 && (
               <div className="mt-6 pt-4 border-t">
-                <p className="text-sm font-semibold mb-2 text-foreground">Sources:</p>
+                <p className="text-sm font-semibold mb-2 text-foreground">
+                  Sources:
+                </p>
                 <ul className="space-y-1 text-xs text-muted-foreground">
                   {citations.map((citation, index) => (
                     <li key={index} className="flex gap-2">
-                      <span className="text-primary font-medium">[{index + 1}]</span>
+                      <span className="text-primary font-medium">
+                        [{index + 1}]
+                      </span>
                       <span>{citation}</span>
                     </li>
                   ))}

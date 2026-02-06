@@ -53,7 +53,7 @@ export function QuickInfoScreen() {
   const summaryOptions = [
     {
       id: "standard",
-      title: "General Version",
+      title: "Detailed Summary",
       description:
         "Comprehensive analysis with detailed insights and full context",
       icon: FileText,
@@ -61,7 +61,7 @@ export function QuickInfoScreen() {
     },
     {
       id: "executive",
-      title: "Executive Version",
+      title: "Executive Summary",
       description:
         "High-level overview with key metrics and strategic recommendations",
       icon: Briefcase,
@@ -188,7 +188,7 @@ export function QuickInfoScreen() {
                           onClick={() => handleGenerateSummary("standard")}
                           disabled={isLoading}
                         >
-                          General
+                          Detailed
                         </Button>
                         <Button
                           variant={

@@ -1,5 +1,6 @@
 import * as React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { cn } from "@/app/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/app/components/ui/card";
 import { Badge } from "@/app/components/ui/badge";
@@ -85,11 +86,16 @@ export function AIMessage({
                 AI Assistant
               </span>
             </div>
-            <Badge 
+            <Badge
               variant={getConfidenceBadgeVariant(confidence.level)}
               className="gap-1.5"
             >
-              <span className={cn("w-1.5 h-1.5 rounded-full", getConfidenceColor(confidence.level))} />
+              <span
+                className={cn(
+                  "w-1.5 h-1.5 rounded-full",
+                  getConfidenceColor(confidence.level),
+                )}
+              />
               {confidence.level} Confidence
             </Badge>
           </div>
@@ -100,7 +106,36 @@ export function AIMessage({
           <div className="relative pl-4 border-l-4 border-primary">
             <div className="prose prose-sm max-w-none dark:prose-invert prose-p:text-lg prose-p:font-semibold prose-p:leading-relaxed prose-p:my-2 prose-ul:my-2 prose-li:my-1 prose-strong:font-bold">
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
+                  table: ({ children }) => (
+                    <div className="my-6 w-full overflow-y-auto">
+                      <table className="w-full">{children}</table>
+                    </div>
+                  ),
+                  thead: ({ children }) => (
+                    <thead className="border-b">{children}</thead>
+                  ),
+                  tbody: ({ children }) => (
+                    <tbody className="[&_tr:last-child]:border-0">
+                      {children}
+                    </tbody>
+                  ),
+                  tr: ({ children }) => (
+                    <tr className="border-b transition-colors hover:bg-muted/50">
+                      {children}
+                    </tr>
+                  ),
+                  th: ({ children }) => (
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">
+                      {children}
+                    </th>
+                  ),
+                  td: ({ children }) => (
+                    <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
+                      {children}
+                    </td>
+                  ),
                   p: ({ children }) => (
                     <p className="text-lg font-semibold leading-relaxed text-foreground my-2">
                       {children}
@@ -112,9 +147,7 @@ export function AIMessage({
                     </ul>
                   ),
                   li: ({ children }) => (
-                    <li className="text-base font-normal">
-                      {children}
-                    </li>
+                    <li className="text-base font-normal">{children}</li>
                   ),
                   strong: ({ children }) => (
                     <strong className="font-bold text-foreground">
@@ -167,21 +200,31 @@ export function AIMessage({
                 <div className="flex items-start gap-2">
                   <FileText className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-muted-foreground">Document Section(s)</p>
-                    <p className="text-sm text-foreground break-words">{source.sections.join(", ")}</p>
+                    <p className="text-xs font-medium text-muted-foreground">
+                      Document Section(s)
+                    </p>
+                    <p className="text-sm text-foreground break-words">
+                      {source.sections.join(", ")}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
                   <FileText className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-muted-foreground">Page(s)</p>
-                    <p className="text-sm text-foreground break-words">{source.pages.join(", ")}</p>
+                    <p className="text-xs font-medium text-muted-foreground">
+                      Page(s)
+                    </p>
+                    <p className="text-sm text-foreground break-words">
+                      {source.pages.join(", ")}
+                    </p>
                   </div>
                 </div>
               </div>
               <Separator />
               <div className="min-w-0">
-                <p className="text-xs font-medium text-muted-foreground mb-2">Exact Contract Language</p>
+                <p className="text-xs font-medium text-muted-foreground mb-2">
+                  Exact Contract Language
+                </p>
                 <blockquote className="border-l-2 border-primary/30 pl-4 py-2 bg-background rounded-r-lg overflow-hidden">
                   <p className="text-sm italic text-muted-foreground leading-relaxed break-words whitespace-normal">
                     {source.exactLanguage}
@@ -192,7 +235,10 @@ export function AIMessage({
           </Collapsible>
 
           {/* Interpretation Notes */}
-          <Collapsible open={interpretationOpen} onOpenChange={setInterpretationOpen}>
+          <Collapsible
+            open={interpretationOpen}
+            onOpenChange={setInterpretationOpen}
+          >
             <CollapsibleTrigger asChild>
               <Button
                 variant="ghost"
@@ -204,7 +250,9 @@ export function AIMessage({
                   ) : (
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   )}
-                  <span className="text-sm font-medium">Interpretation Notes</span>
+                  <span className="text-sm font-medium">
+                    Interpretation Notes
+                  </span>
                 </div>
                 <Badge variant="outline" className="text-xs">
                   Additional context
@@ -232,7 +280,9 @@ export function AIMessage({
                   ) : (
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   )}
-                  <span className="text-sm font-medium">Confidence & Caveats</span>
+                  <span className="text-sm font-medium">
+                    Confidence & Caveats
+                  </span>
                 </div>
                 <Badge variant="outline" className="text-xs">
                   Review details
@@ -245,7 +295,9 @@ export function AIMessage({
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-500 mt-0.5 shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium">Confidence: {confidence.level}</p>
+                    <p className="text-sm font-medium">
+                      Confidence: {confidence.level}
+                    </p>
                     <p className="text-sm text-muted-foreground mt-1 break-words">
                       Reason: {confidence.reason}
                     </p>
@@ -258,7 +310,9 @@ export function AIMessage({
                   <AlertCircle className="h-4 w-4 text-orange-600 dark:text-orange-500 mt-0.5 shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium">Caveats & Exceptions</p>
-                    <p className="text-sm text-muted-foreground mt-1 break-words">{caveats}</p>
+                    <p className="text-sm text-muted-foreground mt-1 break-words">
+                      {caveats}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -267,11 +321,16 @@ export function AIMessage({
                 <div className="flex items-start gap-2">
                   <Info className="h-4 w-4 text-blue-600 dark:text-blue-500 mt-0.5 shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium mb-2">Traceability Metadata</p>
+                    <p className="text-sm font-medium mb-2">
+                      Traceability Metadata
+                    </p>
                     <ul className="space-y-1 text-sm text-muted-foreground break-words">
                       <li>• Document ID: {metadata.documentId}</li>
                       <li>• Definition Type: {metadata.definitionType}</li>
-                      <li>• Review Required: {metadata.reviewRequired ? "Yes" : "No"}</li>
+                      <li>
+                        • Review Required:{" "}
+                        {metadata.reviewRequired ? "Yes" : "No"}
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -287,7 +346,9 @@ export function AIMessage({
             {citations.map((citation, index) => (
               <React.Fragment key={index}>
                 <span>{citation}</span>
-                {index < citations.length - 1 && <span className="text-muted-foreground/50">•</span>}
+                {index < citations.length - 1 && (
+                  <span className="text-muted-foreground/50">•</span>
+                )}
               </React.Fragment>
             ))}
           </div>

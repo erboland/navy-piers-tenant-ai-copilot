@@ -205,7 +205,7 @@ Please ask a specific question, or use one of the quick-start buttons above to g
 export function generateExecutiveSummary(vendorName: string): EnhancedMessage {
   return {
     role: "assistant",
-    content: `# Executive Persona Summary
+    content: `# Executive Summary
 ## ${vendorName}
 
 ### Key Financial Highlights
@@ -257,7 +257,7 @@ export function generateExecutiveSummary(vendorName: string): EnhancedMessage {
 export function generateStandardSummary(vendorName: string): EnhancedMessage {
   return {
     role: "assistant",
-    content: `# Standard / Detailed Summary
+    content: `# Detailed Summary
 ## ${vendorName}
 
 ### Lease Abstract

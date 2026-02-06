@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { FileText, MessageSquare } from "lucide-react";
+import { OnboardingGuide } from "../components/onboarding-guide";
 import {
   Card,
   CardDescription,
@@ -44,6 +45,9 @@ export function HomeScreen() {
             Your intelligent assistant for tenant, lease, and vendor data
             analysis
           </p>
+          <div className="pt-4">
+            <OnboardingGuide />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
