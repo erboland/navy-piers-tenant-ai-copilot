@@ -208,48 +208,53 @@ export function generateExecutiveSummary(vendorName: string): EnhancedMessage {
     content: `# Executive Summary
 ## ${vendorName}
 
-### Key Financial Highlights
+**Agreement Type:** Lease Agreement (Navy Pier®)
+**Landlord:** Navy Pier, Inc.
+**Execution Date:** June 1, 2025
 
-**Annual Performance**
-- **Total Revenue (2025):** $2.4M
-- **YoY Growth:** +12%
-- **Rent Collection Rate:** 100%
+### 1) Party & Space Snapshot
 
-**Lease Terms**
-- **Base Rent:** $18,500/month
-- **Percentage Rent:** 8% on gross sales over $1.5M
-- **Lease Expiration:** June 30, 2030
+| Item | Value |
+|------|-------|
+| **Legal Name** | ${vendorName} |
+| **Premises** | Suite 125 (See Exhibit B) |
+| **Size** | 2,400 sq ft |
+| **Permitted Use** | Retail food & beverage operations |
 
-### Key Risks & Flags
+### 2) Term & Renewal
 
-🔴 **CRITICAL:** Insurance certificate expires in 6 months (May 31, 2026)
+| Item | Value |
+|------|-------|
+| **Term** | June 1, 2025 → June 30, 2030 |
+| **Remaining** | 4 years, 5 months |
+| **Renewal Option** | Two 5-year options |
+| **Conditions** | Written notice 12 months prior |
 
-🟡 **ATTENTION:** Upcoming lease renewal negotiation window opens in 90 days
+### 3) Financials (Structured)
 
-### Performance Scorecard
+**Pricing Model:** Base Rent + Percentage Rent (8% over $1.5M)
 
-| Metric | Score | Trend |
-|--------|-------|-------|
-| Financial Health | A | ↗ Improving |
-| Compliance Status | A- | → Stable |
-| Lease Adherence | A+ | ✓ Excellent |
-| Operational Performance | B+ | ↗ Improving |
+| Metric | Monthly | Annual (Est.) |
+|--------|---------|---------------|
+| **Base Rent** | $18,500 | $222,000 |
+| **CAM Charges** | $3,200 | $38,400 |
+| **Total Fixed** | $21,700 | $260,400 |
 
-### Recent Activity
-- Submitted renovation plans for approval (Jan 15, 2026)
-- Completed fire safety inspection with no violations (Dec 10, 2025)
-- Requested additional parking allocation (Nov 5, 2025)
+**Payment Timing:** Due on 1st of month (Auto-debit)
+**Late Fee:** 5% of amount due + $100 admin fee
 
-### Recommended Actions
-1. Schedule insurance renewal discussion
-2. Initiate lease renewal conversation
-3. Review renovation plan timeline
-4. Monitor Q1 2026 sales performance`,
+### 4) Key Risks & Responsibilities
+
+| Scope | Responsibility | Notes |
+|-------|----------------|-------|
+| **Insurance** | Tenant | **CRITICAL:** Expires May 31, 2026 |
+| **Repairs** | Tenant | Interior & HVAC maintenance |
+| **Utilities** | Tenant | Electric (metered) |
+| **Termination** | Landlord | Force majeure or default |`,
     citations: [
       "Lease Agreement - Executed June 1, 2025",
       "Monthly Financial Report - December 2025",
       "Compliance Dashboard - Updated January 2, 2026",
-      "Property Management System - Last sync: Today",
     ],
   };
 }
