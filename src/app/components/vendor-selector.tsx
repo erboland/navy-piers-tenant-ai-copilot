@@ -21,10 +21,14 @@ export function VendorSelector({ value, onValueChange }: VendorSelectorProps) {
       </SelectTrigger>
       <SelectContent>
         {mockVendors.map((vendor) => (
-          <SelectItem key={vendor.id} value={vendor.id}>
+          <SelectItem 
+            key={vendor.id} 
+            value={vendor.id}
+            className="focus:bg-primary focus:text-primary-foreground"
+          >
             <div className="flex flex-col">
               <span>{vendor.name}</span>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs opacity-80">
                 {vendor.type} • {vendor.location}
               </span>
             </div>

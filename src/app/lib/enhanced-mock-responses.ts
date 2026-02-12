@@ -1,6 +1,8 @@
 import chefArtSmithQA from './chef-art-smith-qa.json';
 import { EnhancedMessage, StructuredQAData } from '../components/enhanced-chat-message';
 
+import { AIMessageProps } from '../components/ai-message';
+
 // Function to check for predefined Q&A matches and return structured data
 function checkPredefinedQuestions(question: string, vendorName: string): EnhancedMessage | null {
   // Normalize the question for matching
@@ -56,6 +58,120 @@ function checkPredefinedQuestions(question: string, vendorName: string): Enhance
   }
   
   return null;
+}
+
+export function generateExecutiveFAQSummary(vendorName: string): AIMessageProps[] {
+  const isChefArtSmith = vendorName.toLowerCase().includes('chef art smith') || 
+                         vendorName.toLowerCase().includes('reunion');
+  
+  // Executive questions from mapping sheet:
+  // Definitions, Legal Name, Permitted Use, Premises, Size, Article III, Term, Option to Renew, Option Conditions, 
+  // Article V, Base Rental Due, Additional Rental Due, Exhibit M (Rent, CAM, Marketing, Percentage Rent, Terms)
+  
+  const executiveQuestions = [
+    "What is the legal name of the tenant?",
+    "What is the Permitted Use defined as?",
+    "What is the Premises?",
+    "What is the size of the Premises?",
+    "What is the Term of the Lease?",
+    "Is there an Option to Renew and what is it?",
+    "What are the conditions the Tenant must meet to Exercise its Option to Renew?",
+    "When is the Base Rental Due?",
+    "When is additional rental including percentage rent due?",
+    "How do we get out of the lease?",
+  ];
+
+  if (vendorName.toLowerCase().includes('billy goat')) {
+    return [
+      {
+        question: "What is the legal name of the tenant?",
+        answer: "Billy Goat Tavern (Navy Pier), LLC",
+        source: {
+          sections: ["Section 1.1"],
+          pages: ["Page 1"],
+          exactLanguage: "TENANT: Billy Goat Tavern (Navy Pier), LLC",
+        },
+        confidence: { level: "High", reason: "Directly from Lease Section 1.1" },
+        metadata: { documentId: "BILLY_GOAT_2022", definitionType: "Legal Name", reviewRequired: false },
+        citations: ["Billy Goat Lease 2022"]
+      },
+      {
+        question: "What is the Permitted Use defined as?",
+        answer: "The operation of a full-service restaurant and bar specializing in burgers and traditional tavern fare.",
+        source: {
+          sections: ["Section 1.1"],
+          pages: ["Page 2"],
+          exactLanguage: "Permitted Use: Restaurant and bar operations",
+        },
+        confidence: { level: "High", reason: "Directly from Lease Section 1.1" },
+        metadata: { documentId: "BILLY_GOAT_2022", definitionType: "Use Clause", reviewRequired: false },
+        citations: ["Billy Goat Lease 2022"]
+      },
+      {
+        question: "How do we get out of the lease?",
+        answer: "Termination constraints include a 90-day period of transition and specific notice requirements as outlined in the lease agreement.",
+        source: {
+          sections: ["Termination Article"],
+          pages: ["Multiple"],
+          exactLanguage: "Tenant must provide written notice and adhere to a 90-day transition period for orderly exit.",
+        },
+        interpretation: "The 90-day transition period is a key constraint for lease termination.",
+        confidence: { level: "High", reason: "Matches termination constraints mentioned in the document." },
+        caveats: "Termination may be subject to additional fees or conditions depending on the timing of the request.",
+        metadata: { documentId: "BILLY_GOAT_2022", definitionType: "Termination", reviewRequired: true },
+        citations: ["Billy Goat Lease 2022"]
+      }
+    ];
+  }
+
+  if (isChefArtSmith) {
+    return chefArtSmithQA.questions
+      .filter(q => executiveQuestions.some(eq => q.question.includes(eq)))
+      .map(qa => ({
+        question: qa.question,
+        answer: qa.answer,
+        source: {
+          sections: qa.sections,
+          pages: qa.pages,
+          exactLanguage: qa.exactLanguage,
+        },
+        interpretation: qa.interpretationNotes,
+        confidence: {
+          level: qa.confidence as "High" | "Medium" | "Low",
+          reason: qa.confidenceReason,
+        },
+        caveats: qa.caveats,
+        metadata: {
+          documentId: qa.documentId,
+          definitionType: qa.definitionType,
+          reviewRequired: qa.reviewRequired,
+        },
+        citations: [
+          "Chef Art Smith Lease - Executed May 11, 2020",
+          `${qa.sections.join(', ')} - ${qa.pages.join(', ')}`,
+        ],
+      }));
+  }
+
+  // Fallback for other vendors with generic data
+  return executiveQuestions.map(q => ({
+    question: q,
+    answer: `Generic executive response for ${vendorName} regarding ${q}.`,
+    source: {
+      sections: ["Section 1.1"],
+      pages: ["Page 1"],
+      exactLanguage: "Standard lease language applies.",
+    },
+    interpretation: "Interpretation of standard lease terms.",
+    confidence: { level: "Medium", reason: "Using generic template data." },
+    caveats: "This is a placeholder for demonstration purposes.",
+    metadata: {
+      documentId: "GENERIC_LEASE_001",
+      definitionType: "Standard",
+      reviewRequired: true
+    },
+    citations: ["Standard Lease Agreement"]
+  }));
 }
 
 export function generateEnhancedCustomResponse(question: string, vendorName: string): EnhancedMessage {

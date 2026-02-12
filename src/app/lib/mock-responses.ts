@@ -136,7 +136,7 @@ export function generateExecutiveSummary(vendorName: string): Message {
 export function generateStandardSummary(vendorName: string): Message {
   return {
     role: "assistant",
-    content: `# Standard / Detailed Summary
+    content: `# Detailed Summary
 ## ${vendorName}
 
 ### Lease Abstract

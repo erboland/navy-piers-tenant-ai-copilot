@@ -13,6 +13,7 @@ export const mockVendors: Vendor[] = [
   { id: "4", name: "Pier Shop Souvenirs", type: "Retail", location: "Suite 180" },
   { id: "5", name: "Chicago's Dog House", type: "Fast Food", location: "Suite 142" },
   { id: "6", name: "Chef Art Smith's Reunion", type: "Restaurant", location: "Suite 300" },
+  { id: "7", name: "Billy Goat Tavern", type: "Restaurant & Bar", location: "Suite 210" },
 ];
 
 // Mock financial data

@@ -20,7 +20,9 @@ import { mockVendors } from "../lib/mock-data";
 import {
   generateExecutiveSummary,
   generateStandardSummary,
+  generateExecutiveFAQSummary,
 } from "../lib/enhanced-mock-responses";
+import { AIMessage, type AIMessageProps } from "../components/ai-message";
 
 type SummaryType = "executive" | "standard" | null;
 
@@ -29,6 +31,9 @@ export function QuickInfoScreen() {
   const [selectedVendor, setSelectedVendor] = React.useState("");
   const [summaryType, setSummaryType] = React.useState<SummaryType>(null);
   const [summary, setSummary] = React.useState<EnhancedMessage | null>(null);
+  const [faqSummary, setFaqSummary] = React.useState<AIMessageProps[] | null>(
+    null,
+  );
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handleGenerateSummary = (type: "executive" | "standard") => {
@@ -39,13 +44,17 @@ export function QuickInfoScreen() {
 
     setIsLoading(true);
     setSummaryType(type);
+    setSummary(null);
+    setFaqSummary(null);
 
     setTimeout(() => {
-      const generatedSummary =
-        type === "executive"
-          ? generateExecutiveSummary(vendor.name)
-          : generateStandardSummary(vendor.name);
-      setSummary(generatedSummary);
+      if (type === "executive") {
+        const generatedFaq = generateExecutiveFAQSummary(vendor.name);
+        setFaqSummary(generatedFaq);
+      } else {
+        const generatedSummary = generateStandardSummary(vendor.name);
+        setSummary(generatedSummary);
+      }
       setIsLoading(false);
     }, 1200);
   };
@@ -96,6 +105,7 @@ export function QuickInfoScreen() {
                 onValueChange={(value) => {
                   setSelectedVendor(value);
                   setSummary(null);
+                  setFaqSummary(null);
                   setSummaryType(null);
                 }}
               />
@@ -118,7 +128,7 @@ export function QuickInfoScreen() {
                   Choose a vendor from the dropdown above to get started
                 </p>
               </div>
-            ) : !summary && !isLoading ? (
+            ) : !summary && !faqSummary && !isLoading ? (
               <div className="space-y-8">
                 <div className="text-center mb-8">
                   <h2 className="text-2xl mb-2">Choose Summary Type</h2>
@@ -173,7 +183,7 @@ export function QuickInfoScreen() {
             ) : (
               <div className="space-y-6">
                 {/* Summary Type Toggle */}
-                {summary && (
+                {summaryType && (
                   <div className="flex items-center justify-between gap-4 p-4 bg-card rounded-lg border">
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-semibold text-muted-foreground">
@@ -217,6 +227,25 @@ export function QuickInfoScreen() {
                 {/* Summary Display */}
                 {summary && !isLoading && (
                   <EnhancedChatMessage message={summary} />
+                )}
+
+                {faqSummary && !isLoading && (
+                  <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <Briefcase className="w-5 h-5 text-primary" />
+                      </div>
+                      <h2 className="text-2xl font-semibold">Executive Quick Info Sheet</h2>
+                    </div>
+                    {faqSummary.map((qa, index) => (
+                      <div key={index} className="space-y-4">
+                        <h3 className="text-xl font-medium px-2 text-primary/80">
+                          {qa.question}
+                        </h3>
+                        <AIMessage {...qa} />
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
             )}

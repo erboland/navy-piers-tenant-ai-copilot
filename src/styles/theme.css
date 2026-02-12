@@ -4,6 +4,7 @@
   /* Navy Pier Design System - Color Tokens */
   --color-pier-navy: #001E62; /* Updated to official Navy Pier Blue */
   --color-deep-navy: #001a38;
+  --color-pier-cyan: #00C9E0; /* Official Cyan for CTAs */
   --color-lake-blue: #0077b6; /* Lakeshore Blue */
   --color-lakeshore-blue: #0077b6; /* Alias */
   --color-harbor-teal: #00a5a8;
@@ -88,11 +89,11 @@
   --popover-foreground: var(--color-charcoal);
   --primary: var(--color-pier-navy);
   --primary-foreground: var(--color-white);
-  --secondary: var(--color-lake-blue);
+  --secondary: var(--color-pier-cyan);
   --secondary-foreground: var(--color-white);
   --muted: var(--color-cloud);
   --muted-foreground: var(--color-slate);
-  --accent: var(--color-harbor-teal);
+  --accent: var(--color-pier-cyan);
   --accent-foreground: var(--color-white);
   --destructive: var(--color-pier-red);
   --destructive-foreground: var(--color-white);
@@ -100,8 +101,8 @@
   --input: var(--color-mist);
   --input-background: var(--color-white);
   --switch-background: var(--color-mist);
-  --ring: var(--color-lake-blue);
-  --chart-1: var(--color-lake-blue);
+  --ring: var(--color-pier-cyan);
+  --chart-1: var(--color-pier-cyan);
   --chart-2: var(--color-harbor-teal);
   --chart-3: var(--color-pier-navy);
   --chart-4: var(--color-carousel-yellow); /* Updated to use brand color */
@@ -113,7 +114,7 @@
   --sidebar-accent: var(--color-fog);
   --sidebar-accent-foreground: var(--color-charcoal);
   --sidebar-border: var(--color-cloud);
-  --sidebar-ring: var(--color-lake-blue);
+  --sidebar-ring: var(--color-pier-cyan);
 }
 
 .dark {
@@ -123,7 +124,7 @@
   --card-foreground: var(--color-white);
   --popover: var(--color-deep-navy);
   --popover-foreground: var(--color-white);
-  --primary: var(--color-lake-blue);
+  --primary: var(--color-pier-cyan);
   --primary-foreground: var(--color-white);
   --secondary: var(--color-harbor-teal);
   --secondary-foreground: var(--color-white);
@@ -136,8 +137,8 @@
   --border: var(--color-slate);
   --input: var(--color-charcoal);
   --input-background: var(--color-charcoal);
-  --ring: var(--color-lake-blue);
-  --chart-1: var(--color-lake-blue);
+  --ring: var(--color-pier-cyan);
+  --chart-1: var(--color-pier-cyan);
   --chart-2: var(--color-harbor-teal);
   --chart-3: var(--color-pier-navy);
   --chart-4: var(--color-carousel-yellow);
@@ -193,6 +194,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   /* New brand colors available in theme */
   --color-pier-navy: var(--color-pier-navy);
+  --color-pier-cyan: var(--color-pier-cyan);
   --color-firework-magenta: var(--color-firework-magenta);
   --color-leaf-green: var(--color-leaf-green);
   --color-carousel-yellow: var(--color-carousel-yellow);

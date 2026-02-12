@@ -9,7 +9,7 @@ import { Button } from "@/app/components/ui/button";
 import { ChevronDown, ChevronRight, FileText, AlertCircle, CheckCircle2, Info } from "lucide-react";
 import { Separator } from "@/app/components/ui/separator";
 
-interface AIMessageProps {
+export interface AIMessageProps {
   question: string;
   answer: string;
   source: {
@@ -132,23 +132,60 @@ export function AIMessage({
                     </th>
                   ),
                   td: ({ children }) => (
-                    <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0">
+                    <td className="p-4 align-middle text-muted-foreground leading-relaxed [&:has([role=checkbox])]:pr-0">
                       {children}
                     </td>
                   ),
                   p: ({ children }) => (
-                    <p className="text-lg font-semibold leading-relaxed text-foreground my-2">
+                    <p className="text-base font-medium leading-relaxed text-foreground/90 my-3">
                       {children}
                     </p>
                   ),
                   ul: ({ children }) => (
-                    <ul className="text-base font-normal leading-relaxed text-foreground my-2 ml-4 space-y-1">
+                    <ul className="my-4 space-y-2 list-none pl-0">
                       {children}
                     </ul>
                   ),
-                  li: ({ children }) => (
-                    <li className="text-base font-normal">{children}</li>
-                  ),
+                  li: ({ children }) => {
+                    const contentText = React.Children.toArray(children).join("");
+                    const isKeyValue = contentText.includes(":") || (typeof children === "string" && children.includes(":"));
+                    
+                    if (isKeyValue) {
+                      return (
+                        <li className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 pb-2 border-b border-border/40 last:border-0 group">
+                          <span className="shrink-0 font-semibold text-foreground/80 sm:w-1/3 group-hover:text-primary transition-colors">
+                            {React.Children.map(children, child => {
+                              if (React.isValidElement(child) && child.type === 'strong') {
+                                return child.props.children;
+                              }
+                              if (typeof child === 'string' && child.includes(':')) {
+                                return child.split(':')[0].trim();
+                              }
+                              return child;
+                            })}
+                          </span>
+                          <span className="text-muted-foreground flex-1">
+                            {React.Children.map(children, child => {
+                              if (React.isValidElement(child) && child.type === 'strong') {
+                                return null;
+                              }
+                              if (typeof child === 'string' && child.includes(':')) {
+                                return child.split(':')[1].trim();
+                              }
+                              return child;
+                            })}
+                          </span>
+                        </li>
+                      );
+                    }
+                    
+                    return (
+                      <li className="flex gap-3 items-start py-1">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
+                        <div className="text-muted-foreground flex-1">{children}</div>
+                      </li>
+                    );
+                  },
                   strong: ({ children }) => (
                     <strong className="font-bold text-foreground">
                       {children}

@@ -14,7 +14,8 @@ navy tones, fresh lake blues, and warm accents that feel lively and welcoming.
 **Primary brand**
 
 - Pier Navy `#002B5B` (primary brand, headings, primary buttons)
-- Lake Blue `#0077B6` (links, highlights)
+- Pier Cyan `#00C9E0` (primary CTA buttons, highlights)
+- Lake Blue `#0077B6` (links, secondary highlights)
 - Harbor Teal `#00A5A8` (secondary accents)
 
 **Accents**

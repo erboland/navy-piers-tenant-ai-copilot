@@ -6,7 +6,8 @@ This document defines core components and their recommended usage patterns.
 
 **Variants**
 
-- Primary: Pier Navy background, white text.
+- Primary Action: Pier Cyan background, white text. (Used for main CTAs)
+- Primary Brand: Pier Navy background, white text. (Used for structural actions)
 - Secondary: White background, Pier Navy border and text.
 - Ghost: Transparent background, Lake Blue text.
 

@@ -167,10 +167,10 @@ export function ChatScreen() {
                   {selectedVendor && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto mt-8">
                       {[
-                        "What are the key lease terms?",
-                        "Show me financial performance",
-                        "Are there any compliance issues?",
-                        "What's the contract renewal date?",
+                        "What is the legal name of the tenant?",
+                        "What is the size of the Premises?",
+                        "Is there an Option to Renew and what is it?",
+                        "What are the Tenant's Responsibility to Repair?",
                       ].map((suggestion, i) => (
                         <button
                           key={i}
