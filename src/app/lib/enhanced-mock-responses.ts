@@ -56,6 +56,105 @@ function checkPredefinedQuestions(question: string, vendorName: string): Enhance
       }
     }
   }
+
+  // Check if this is for Billy Goat Tavern
+  if (vendorName.toLowerCase().includes('billy goat')) {
+    const billyGoatQA = [
+      {
+        question: "What is the legal name of the tenant?",
+        answer: "Billy Goat Tavern (Navy Pier), LLC",
+        sections: ["Section 1.1"],
+        pages: ["Page 1"],
+        exactLanguage: "TENANT: Billy Goat Tavern (Navy Pier), LLC, an Illinois limited liability company",
+        interpretationNotes: "The legal entity is explicitly defined in the parties section.",
+        confidence: "High",
+        confidenceReason: "Directly stated in the lease document.",
+        caveats: "None.",
+        documentId: "BILLY_GOAT_LEASE_2022",
+        definitionType: "Explicit",
+        reviewRequired: false
+      },
+      {
+        question: "Is there an Option to Renew and what is it?",
+        answer: "Yes, the tenant has one (1) five-year renewal option.",
+        sections: ["Section 2.3"],
+        pages: ["Page 4"],
+        exactLanguage: "Tenant shall have the option to extend the Term for one (1) additional period of five (5) years.",
+        interpretationNotes: "Renewal requires 180 days prior written notice.",
+        confidence: "High",
+        confidenceReason: "Standard renewal clause found in Section 2.3.",
+        caveats: "Must not be in default at time of exercise.",
+        documentId: "BILLY_GOAT_LEASE_2022",
+        definitionType: "Explicit",
+        reviewRequired: false
+      },
+      {
+        question: "What are the Tenant's Responsibility to Repair?",
+        answer: "Tenant is responsible for all interior repairs, including HVAC and plumbing within the premises.",
+        sections: ["Section 7.2"],
+        pages: ["Page 12"],
+        exactLanguage: "Tenant shall, at its sole cost and expense, keep and maintain the Premises in good order and repair.",
+        interpretationNotes: "Includes regular maintenance of kitchen equipment and grease traps.",
+        confidence: "High",
+        confidenceReason: "Detailed in the maintenance section of the lease.",
+        caveats: "Structural repairs remain Landlord's responsibility.",
+        documentId: "BILLY_GOAT_LEASE_2022",
+        definitionType: "Explicit",
+        reviewRequired: false
+      },
+      {
+        question: "What is the size of the Premises?",
+        answer: "Approximately 2,850 square feet.",
+        sections: ["Section 1.2"],
+        pages: ["Page 1"],
+        exactLanguage: "The Premises consist of approximately 2,850 rentable square feet.",
+        interpretationNotes: "Final measurement may vary by up to 3%.",
+        confidence: "High",
+        confidenceReason: "Explicitly stated in the premises definition.",
+        caveats: "Rent is calculated based on this rentable area.",
+        documentId: "BILLY_GOAT_LEASE_2022",
+        definitionType: "Explicit",
+        reviewRequired: false
+      }
+    ];
+
+    for (const qa of billyGoatQA) {
+      const predefinedQuestion = qa.question.toLowerCase().trim();
+      if (normalizedQuestion === predefinedQuestion ||
+          normalizedQuestion.includes(predefinedQuestion) ||
+          predefinedQuestion.includes(normalizedQuestion)) {
+        
+        const structuredData: StructuredQAData = {
+          question: qa.question,
+          answer: qa.answer,
+          source: {
+            sections: qa.sections,
+            pages: qa.pages,
+            exactLanguage: qa.exactLanguage,
+          },
+          interpretation: qa.interpretationNotes,
+          confidence: {
+            level: qa.confidence as "High" | "Medium" | "Low",
+            reason: qa.confidenceReason,
+          },
+          caveats: qa.caveats,
+          metadata: {
+            documentId: qa.documentId,
+            definitionType: qa.definitionType,
+            reviewRequired: qa.reviewRequired,
+          },
+          citations: [`Billy Goat Lease - ${qa.sections.join(', ')}`],
+        };
+
+        return {
+          role: "assistant",
+          content: qa.answer,
+          structuredData,
+          citations: structuredData.citations,
+        };
+      }
+    }
+  }
   
   return null;
 }
@@ -181,13 +280,14 @@ export function generateEnhancedCustomResponse(question: string, vendorName: str
     return predefinedResponse;
   }
   
-  // Fallback to keyword-based responses (traditional markdown format)
+  // Keyword-based responses (wrap in structuredData for consistency)
   const lowerQuestion = question.toLowerCase();
 
+  let content = "";
+  let citations: string[] = [];
+
   if (lowerQuestion.includes("revenue") || lowerQuestion.includes("sales") || lowerQuestion.includes("financial")) {
-    return {
-      role: "assistant",
-      content: `## Financial Performance for ${vendorName}
+    content = `## Financial Performance for ${vendorName}
 
 ### Revenue Summary
 Based on the latest financial data, ${vendorName} has demonstrated strong financial performance:
@@ -207,19 +307,14 @@ Based on the latest financial data, ${vendorName} has demonstrated strong financ
 ${vendorName} has maintained a perfect payment record with 100% on-time rent payments for the past 12 months.
 
 ### Trend Analysis
-The 12% year-over-year growth indicates strong operational performance. Q4 typically represents the highest revenue quarter due to holiday season foot traffic at Navy Pier.`,
-      citations: [
-        "Monthly Financial Report - December 2025",
-        "Percentage Rent Calculation Worksheet - 2025",
-        "Payment History Log - Last 12 months",
-      ],
-    };
-  }
-
-  if (lowerQuestion.includes("lease") || lowerQuestion.includes("contract") || lowerQuestion.includes("terms")) {
-    return {
-      role: "assistant",
-      content: `## Lease Information for ${vendorName}
+The 12% year-over-year growth indicates strong operational performance. Q4 typically represents the highest revenue quarter due to holiday season foot traffic at Navy Pier.`;
+    citations = [
+      "Monthly Financial Report - December 2025",
+      "Percentage Rent Calculation Worksheet - 2025",
+      "Payment History Log - Last 12 months",
+    ];
+  } else if (lowerQuestion.includes("lease") || lowerQuestion.includes("contract") || lowerQuestion.includes("terms")) {
+    content = `## Lease Information for ${vendorName}
 
 ### Current Lease Terms
 
@@ -247,18 +342,13 @@ The 12% year-over-year growth indicates strong operational performance. Q4 typic
 - **Use Clause:** Retail food & beverage only
 - **Assignment:** Requires landlord approval
 - **Exclusive Rights:** Italian cuisine exclusivity
-- **Co-Tenancy Protection:** 25% rent reduction if anchor tenant vacates`,
-      citations: [
-        "Lease Agreement - Executed June 1, 2025",
-        "Lease Abstract Database",
-      ],
-    };
-  }
-
-  if (lowerQuestion.includes("compliance") || lowerQuestion.includes("permit") || lowerQuestion.includes("insurance")) {
-    return {
-      role: "assistant",
-      content: `## Compliance Status for ${vendorName}
+- **Co-Tenancy Protection:** 25% rent reduction if anchor tenant vacates`;
+    citations = [
+      "Lease Agreement - Executed June 1, 2025",
+      "Lease Abstract Database",
+    ];
+  } else if (lowerQuestion.includes("compliance") || lowerQuestion.includes("permit") || lowerQuestion.includes("insurance")) {
+    content = `## Compliance Status for ${vendorName}
 
 ### Current Status: ✓ COMPLIANT
 
@@ -285,19 +375,15 @@ All required certifications and insurance policies are currently valid. However,
 ### Recent Inspections
 - **Fire Safety Inspection:** Passed with 0 violations (Dec 10, 2025)
 - **Health Inspection:** Passed with minor recommendations (Nov 2, 2025)
-- **ADA Compliance:** Verified compliant (Jun 1, 2025)`,
-      citations: [
-        "Compliance Dashboard - Updated daily",
-        "Insurance Certificate Log",
-        "Inspection Records Database",
-      ],
-    };
-  }
-
-  // Default response
-  return {
-    role: "assistant",
-    content: `## Response for ${vendorName}
+- **ADA Compliance:** Verified compliant (Jun 1, 2025)`;
+    citations = [
+      "Compliance Dashboard - Updated daily",
+      "Insurance Certificate Log",
+      "Inspection Records Database",
+    ];
+  } else {
+    // Default response
+    content = `## Response for ${vendorName}
 
 I can help you with information about ${vendorName}, including:
 
@@ -312,8 +398,37 @@ Please ask a specific question, or use one of the quick-start buttons above to g
 - "What is the current revenue for this vendor?"
 - "When does the lease expire?"
 - "Show me the compliance status"
-- "What are the payment terms?"`,
-    citations: ["Tenant Database - Navy Pier System"],
+- "What are the payment terms?"`;
+    citations = ["Tenant Database - Navy Pier System"];
+  }
+
+  const structuredData: StructuredQAData = {
+    question: question,
+    answer: content,
+    source: {
+      sections: ["General Terms"],
+      pages: ["1"],
+      exactLanguage: "See cited documents for details.",
+    },
+    interpretation: "General summary based on current system data.",
+    confidence: {
+      level: "High",
+      reason: "Matches current database records.",
+    },
+    caveats: "Standard operational caveats apply.",
+    metadata: {
+      documentId: "NAVY_PIER_SYSTEM_2026",
+      definitionType: "General Info",
+      reviewRequired: false,
+    },
+    citations: citations,
+  };
+
+  return {
+    role: "assistant",
+    content: content,
+    structuredData,
+    citations: structuredData.citations,
   };
 }
 

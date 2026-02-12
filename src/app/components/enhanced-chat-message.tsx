@@ -41,12 +41,6 @@ export function EnhancedChatMessage({ message }: EnhancedChatMessageProps) {
   if (message.role === "assistant" && message.structuredData) {
     return (
       <div className="w-full">
-        {/* Show user question from structured data */}
-        <div className="flex justify-end mb-3">
-          <div className="bg-muted rounded-2xl px-4 py-3 max-w-[85%] md:max-w-[70%]">
-            <p className="text-sm text-foreground">{message.structuredData.question}</p>
-          </div>
-        </div>
         {/* Show AI answer with structured format */}
         <AIMessage
           question={message.structuredData.question}

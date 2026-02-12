@@ -161,7 +161,9 @@ export function ChatMessage({ role, content, citations }: ChatMessageProps) {
             )}
           </div>
         ) : (
-          <p className="whitespace-pre-wrap leading-relaxed">{content}</p>
+          <div className="prose prose-sm max-w-none prose-invert prose-p:my-0">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          </div>
         )}
       </div>
     </div>
