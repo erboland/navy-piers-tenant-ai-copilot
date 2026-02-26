@@ -1,7 +1,15 @@
-import chefArtSmithQA from './chef-art-smith-qa.json';
+import chefArtSmithQAData from './chef-art-smith-qa.json';
+import billyGoatTavernQAData from './billy-goat-tavern-qa.json';
+import navyPierParkingQAData from './navy-pier-parking-qa.json';
+import type { LeaseQADocument } from '../../../scripts/types/lease-qa';
 import { EnhancedMessage, StructuredQAData } from '../components/enhanced-chat-message';
 
 import { AIMessageProps } from '../components/ai-message';
+
+// Type-safe imports of lease Q&A data
+const chefArtSmithQA = chefArtSmithQAData as LeaseQADocument;
+const billyGoatTavernQA = billyGoatTavernQAData as LeaseQADocument;
+const navyPierParkingQA = navyPierParkingQAData as LeaseQADocument;
 
 // Function to check for predefined Q&A matches and return structured data
 function checkPredefinedQuestions(question: string, vendorName: string): EnhancedMessage | null {
@@ -59,71 +67,12 @@ function checkPredefinedQuestions(question: string, vendorName: string): Enhance
 
   // Check if this is for Billy Goat Tavern
   if (vendorName.toLowerCase().includes('billy goat')) {
-    const billyGoatQA = [
-      {
-        question: "What is the legal name of the tenant?",
-        answer: "Billy Goat Tavern (Navy Pier), LLC",
-        sections: ["Section 1.1"],
-        pages: ["Page 1"],
-        exactLanguage: "TENANT: Billy Goat Tavern (Navy Pier), LLC, an Illinois limited liability company",
-        interpretationNotes: "The legal entity is explicitly defined in the parties section.",
-        confidence: "High",
-        confidenceReason: "Directly stated in the lease document.",
-        caveats: "None.",
-        documentId: "BILLY_GOAT_LEASE_2022",
-        definitionType: "Explicit",
-        reviewRequired: false
-      },
-      {
-        question: "Is there an Option to Renew and what is it?",
-        answer: "Yes, the tenant has one (1) five-year renewal option.",
-        sections: ["Section 2.3"],
-        pages: ["Page 4"],
-        exactLanguage: "Tenant shall have the option to extend the Term for one (1) additional period of five (5) years.",
-        interpretationNotes: "Renewal requires 180 days prior written notice.",
-        confidence: "High",
-        confidenceReason: "Standard renewal clause found in Section 2.3.",
-        caveats: "Must not be in default at time of exercise.",
-        documentId: "BILLY_GOAT_LEASE_2022",
-        definitionType: "Explicit",
-        reviewRequired: false
-      },
-      {
-        question: "What are the Tenant's Responsibility to Repair?",
-        answer: "Tenant is responsible for all interior repairs, including HVAC and plumbing within the premises.",
-        sections: ["Section 7.2"],
-        pages: ["Page 12"],
-        exactLanguage: "Tenant shall, at its sole cost and expense, keep and maintain the Premises in good order and repair.",
-        interpretationNotes: "Includes regular maintenance of kitchen equipment and grease traps.",
-        confidence: "High",
-        confidenceReason: "Detailed in the maintenance section of the lease.",
-        caveats: "Structural repairs remain Landlord's responsibility.",
-        documentId: "BILLY_GOAT_LEASE_2022",
-        definitionType: "Explicit",
-        reviewRequired: false
-      },
-      {
-        question: "What is the size of the Premises?",
-        answer: "Approximately 2,850 square feet.",
-        sections: ["Section 1.2"],
-        pages: ["Page 1"],
-        exactLanguage: "The Premises consist of approximately 2,850 rentable square feet.",
-        interpretationNotes: "Final measurement may vary by up to 3%.",
-        confidence: "High",
-        confidenceReason: "Explicitly stated in the premises definition.",
-        caveats: "Rent is calculated based on this rentable area.",
-        documentId: "BILLY_GOAT_LEASE_2022",
-        definitionType: "Explicit",
-        reviewRequired: false
-      }
-    ];
-
-    for (const qa of billyGoatQA) {
+    for (const qa of billyGoatTavernQA.questions) {
       const predefinedQuestion = qa.question.toLowerCase().trim();
       if (normalizedQuestion === predefinedQuestion ||
           normalizedQuestion.includes(predefinedQuestion) ||
           predefinedQuestion.includes(normalizedQuestion)) {
-        
+
         const structuredData: StructuredQAData = {
           question: qa.question,
           answer: qa.answer,
@@ -144,6 +93,48 @@ function checkPredefinedQuestions(question: string, vendorName: string): Enhance
             reviewRequired: qa.reviewRequired,
           },
           citations: [`Billy Goat Lease - ${qa.sections.join(', ')}`],
+        };
+
+        return {
+          role: "assistant",
+          content: qa.answer,
+          structuredData,
+          citations: structuredData.citations,
+        };
+      }
+    }
+  }
+
+  // Check if this is for Chicago Shakespeare Theater / Navy Pier Parking
+  if (vendorName.toLowerCase().includes('chicago shakespeare') ||
+      (vendorName.toLowerCase().includes('shakespeare') &&
+       vendorName.toLowerCase().includes('theater'))) {
+    for (const qa of navyPierParkingQA.questions) {
+      const predefinedQuestion = qa.question.toLowerCase().trim();
+      if (normalizedQuestion === predefinedQuestion ||
+          normalizedQuestion.includes(predefinedQuestion) ||
+          predefinedQuestion.includes(normalizedQuestion)) {
+
+        const structuredData: StructuredQAData = {
+          question: qa.question,
+          answer: qa.answer,
+          source: {
+            sections: qa.sections,
+            pages: qa.pages,
+            exactLanguage: qa.exactLanguage,
+          },
+          interpretation: qa.interpretationNotes,
+          confidence: {
+            level: qa.confidence as "High" | "Medium" | "Low",
+            reason: qa.confidenceReason,
+          },
+          caveats: qa.caveats,
+          metadata: {
+            documentId: qa.documentId,
+            definitionType: qa.definitionType,
+            reviewRequired: qa.reviewRequired,
+          },
+          citations: [`Navy Pier Parking Agreement - ${qa.sections.join(', ')}`],
         };
 
         return {

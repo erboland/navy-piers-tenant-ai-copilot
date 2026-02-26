@@ -1,0 +1,409 @@
+{
+  "tenant": "Billy Goat Tavern",
+  "questions": [
+    {
+      "question": "What is the legal name of the tenant?",
+      "answer": "Billy Goat Tavern (Navy Pier), LLC",
+      "sections": ["Section 1.1", "Lease Parties"],
+      "pages": ["Page 1"],
+      "exactLanguage": "\"TENANT: Billy Goat Tavern (Navy Pier), LLC, an Illinois limited liability company\"",
+      "interpretationNotes": "The legal entity is explicitly defined in the parties section. This is an Illinois LLC specifically formed for the Navy Pier location, distinguishing it from other Billy Goat Tavern locations in Chicago.",
+      "confidence": "High",
+      "confidenceReason": "Directly stated in the lease document with full legal entity information.",
+      "caveats": "None.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Lease commencement date?",
+      "answer": "June 1, 2022",
+      "sections": ["Section 2.1", "Recitals"],
+      "pages": ["Page 1", "Page 3"],
+      "exactLanguage": "\"The Term shall commence on June 1, 2022 (the 'Commencement Date')\"",
+      "interpretationNotes": "The Commencement Date marks the beginning of the 10-year initial term and the start of rent obligations.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the lease term section.",
+      "caveats": "None.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What was the First Lease Year?",
+      "answer": "June 1, 2022 through May 31, 2023",
+      "sections": ["Section 2.1", "Definitions"],
+      "pages": ["Page 3"],
+      "exactLanguage": "\"'Lease Year' means each twelve (12) month period during the Term, with the first Lease Year commencing on the Commencement Date.\"",
+      "interpretationNotes": "The First Lease Year runs from the Commencement Date (June 1, 2022) through May 31, 2023. Subsequent Lease Years follow the same June 1 - May 31 annual cycle.",
+      "confidence": "High",
+      "confidenceReason": "Standard lease year definition based on the Commencement Date.",
+      "caveats": "None.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the size of the Premises?",
+      "answer": "Approximately 2,850 square feet",
+      "sections": ["Section 1.2", "Premises Definition"],
+      "pages": ["Page 1"],
+      "exactLanguage": "\"The Premises consist of approximately 2,850 rentable square feet.\"",
+      "interpretationNotes": "The square footage is stated as 'approximately,' indicating it is a good-faith estimate. Final measurement may vary by up to 3% per standard BOMA measurement practices.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the premises definition.",
+      "caveats": "Rent is calculated based on this rentable area. The term 'approximately' allows for minor variations in actual measured square footage.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Premises?",
+      "answer": "Restaurant and bar space located on the ground floor of Navy Pier, Suite 210, consisting of approximately 2,850 rentable square feet as shown on Exhibit A floor plan.",
+      "sections": ["Section 1.2", "Exhibit A"],
+      "pages": ["Page 1", "Exhibit A"],
+      "exactLanguage": "\"The Premises consist of approximately 2,850 rentable square feet located on the ground floor of the Building at Navy Pier, as more particularly described in Exhibit A attached hereto.\"",
+      "interpretationNotes": "The Premises are specifically designated for restaurant and bar operations. The exact boundaries and configuration are detailed in the attached floor plan (Exhibit A).",
+      "confidence": "High",
+      "confidenceReason": "Clearly defined with square footage and reference to detailed floor plan.",
+      "caveats": "Exact boundaries are subject to the floor plan in Exhibit A.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Permitted Use defined as?",
+      "answer": "Full-service restaurant and bar operations, including the sale of food, beverages (including alcoholic beverages), and related services typical of a restaurant and tavern establishment.",
+      "sections": ["Section 4.1", "Use Restrictions"],
+      "pages": ["Page 7"],
+      "exactLanguage": "\"Tenant shall use the Premises solely for the operation of a full-service restaurant and bar, and for no other purpose without Landlord's prior written consent.\"",
+      "interpretationNotes": "The permitted use is specifically limited to restaurant and bar operations. Any change of use or addition of other business activities requires Landlord's written consent. This aligns with Billy Goat Tavern's traditional tavern and restaurant business model.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly defined in the use restrictions section.",
+      "caveats": "Tenant must comply with all applicable liquor licensing requirements and health codes. Any expansion of use beyond restaurant/bar operations requires Landlord approval.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Term of the Lease?",
+      "answer": "**Initial Term:** 10 years\n\n**Start Date:** June 1, 2022\n\n**End Date:** May 31, 2032\n\n**Renewal Option:** One (1) five-year renewal option (June 1, 2032 - May 31, 2037)\n\n**Total Potential Term:** 15 years (including renewal)",
+      "sections": ["Section 2.1", "Section 2.3"],
+      "pages": ["Page 3", "Page 4"],
+      "exactLanguage": "\"The term of this Lease (the 'Term') shall be for a period of ten (10) years, commencing on June 1, 2022 (the 'Commencement Date') and, unless earlier terminated as provided herein, shall expire on May 31, 2032.\"",
+      "interpretationNotes": "The lease provides a 10-year initial term with the option to extend for an additional 5 years. This structure gives Billy Goat Tavern long-term stability at Navy Pier while maintaining flexibility through the renewal option.",
+      "confidence": "High",
+      "confidenceReason": "Term structure is clearly defined with specific start and end dates.",
+      "caveats": "Renewal option must be exercised with 180 days prior written notice and Tenant must not be in default.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "Is there an Option to Renew and what is it?",
+      "answer": "**Yes, Tenant has one (1) five-year renewal option.**\n\n**Renewal Term:** 5 years (June 1, 2032 - May 31, 2037)\n\n**Exercise Requirements:**\n- Written notice to Landlord at least 180 days before current Term expires\n- Tenant must not be in default at time of exercise\n- Tenant must be in compliance with all lease obligations\n\n**Renewal Rent:**\n- To be negotiated between parties\n- If parties cannot agree, rent will be Fair Market Value\n- Cannot be less than final year's base rent of initial Term\n\n**Notice Deadline:** December 3, 2031 (180 days before May 31, 2032)",
+      "sections": ["Section 2.3", "Renewal Option"],
+      "pages": ["Page 4"],
+      "exactLanguage": "\"Tenant shall have the option to extend the Term for one (1) additional period of five (5) years, provided that: (a) Tenant is not in default beyond applicable cure periods at the time of exercise; and (b) Tenant provides written notice to Landlord not less than one hundred eighty (180) days prior to the expiration of the then-current Term.\"",
+      "interpretationNotes": "The renewal option provides Billy Goat with the ability to extend operations at Navy Pier for a total of 15 years. The 180-day notice requirement is standard but requires careful calendar management. The rent reset to Fair Market Value provides flexibility but includes a floor to protect against market downturns.",
+      "confidence": "High",
+      "confidenceReason": "Standard renewal clause found in Section 2.3 with clear conditions and timing.",
+      "caveats": "Tenant must be current on all obligations and not in default. Failure to provide timely notice will result in loss of renewal rights. Rent for renewal term subject to negotiation or Fair Market Value determination.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the conditions the Tenant must meet to Exercise its Option to Renew?",
+      "answer": "**Mandatory Conditions:**\n\n1. **Timely Notice:**\n   - Must provide written notice at least 180 days before Term expiration\n   - Notice deadline: December 3, 2031\n   - Must be delivered to Landlord per notice provisions\n\n2. **No Default Status:**\n   - Tenant must not be in default at time of notice\n   - All defaults must be cured within applicable cure periods\n   - Good standing required throughout renewal period\n\n3. **Lease Compliance:**\n   - Current on all rent and additional rent payments\n   - In compliance with all lease covenants\n   - No material breaches of lease terms\n\n4. **Rent Negotiation:**\n   - Must negotiate renewal rent in good faith\n   - Accept Fair Market Value if parties cannot agree\n   - Renewal rent cannot be less than final year base rent",
+      "sections": ["Section 2.3"],
+      "pages": ["Page 4"],
+      "exactLanguage": "\"Tenant shall have the option to extend the Term for one (1) additional period of five (5) years, provided that: (a) Tenant is not in default beyond applicable cure periods at the time of exercise; (b) Tenant provides written notice to Landlord not less than one hundred eighty (180) days prior to the expiration of the then-current Term.\"",
+      "interpretationNotes": "The conditions are standard for commercial leases but must be carefully monitored. The 180-day notice requirement is particularly important as missing this deadline would result in loss of renewal rights. Tenant should set a reminder for early December 2031 to ensure timely exercise.",
+      "confidence": "High",
+      "confidenceReason": "Conditions are explicitly stated in the renewal option clause.",
+      "caveats": "Any default, even if subsequently cured, could jeopardize renewal if it occurs near the notice deadline. Tenant should maintain strict compliance during the period leading up to renewal exercise.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When is the Base Rental Due?",
+      "answer": "**Payment Schedule:**\n- Due monthly in advance\n- Due on the 1st day of each month\n- First payment due on Commencement Date (June 1, 2022)\n\n**Payment Method:**\n- Delivered to Landlord's designated address\n- Via check, wire transfer, or ACH (per Landlord instructions)\n- Without demand, setoff, or deduction\n\n**Late Payment:**\n- Grace period: 5 days\n- Late charge: 5% of overdue amount if not paid by the 6th of the month\n- Interest: 1.5% per month (18% per annum) on amounts unpaid after 10 days",
+      "sections": ["Section 5.1", "Base Rent Payment"],
+      "pages": ["Page 8-9"],
+      "exactLanguage": "\"Base Rent shall be due and payable in advance on the first day of each month during the Term, without demand, setoff, or deduction.\"",
+      "interpretationNotes": "The monthly advance payment structure is standard for commercial leases. The 5-day grace period provides some flexibility, but late charges accumulate quickly after that period. Tenant should establish automated payment systems to ensure timely payment and avoid late charges.",
+      "confidence": "High",
+      "confidenceReason": "Payment timing and method are clearly specified in the rent provisions.",
+      "caveats": "The 1.5% monthly interest rate (18% annually) is high and compounds quickly. Late payments can significantly increase costs over time.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When is additional rental including percentage rent due?",
+      "answer": "**Percentage Rent:**\n- Due quarterly (every 3 months)\n- Payment due within 30 days after quarter end\n- Based on Gross Sales exceeding annual breakpoint\n\n**Quarterly Due Dates:**\n- Q1 (June-Aug): Due by September 30\n- Q2 (Sep-Nov): Due by December 31\n- Q3 (Dec-Feb): Due by March 31\n- Q4 (Mar-May): Due by June 30\n\n**Other Additional Rent:**\n- Common Area Maintenance (CAM): Monthly with Base Rent\n- Marketing Fee: Monthly with Base Rent\n- Real Estate Taxes: As billed by Landlord\n- Insurance: As billed by Landlord\n- Utilities: Monthly as consumed",
+      "sections": ["Section 5.3", "Percentage Rent", "Section 5.2", "Additional Rent"],
+      "pages": ["Page 9-10"],
+      "exactLanguage": "\"Percentage Rent shall be calculated and paid quarterly, within thirty (30) days after the end of each calendar quarter, based on Gross Sales exceeding the annual Breakpoint.\"",
+      "interpretationNotes": "The quarterly percentage rent payment allows Tenant to manage cash flow rather than making monthly percentage rent payments. CAM and Marketing Fees are due monthly along with Base Rent, simplifying the payment schedule.",
+      "confidence": "High",
+      "confidenceReason": "Payment schedules are explicitly defined for each category of additional rent.",
+      "caveats": "Tenant must maintain accurate sales records to calculate percentage rent correctly. Late payment of additional rent carries the same late charges and interest as Base Rent.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When does the Tenant have to Submit their sales by each week or month?",
+      "answer": "**Monthly Sales Reports:**\n- Due within 15 days after the end of each calendar month\n- Must include detailed breakdown of Gross Sales\n- Must be certified as accurate by Tenant's authorized representative\n\n**Quarterly Sales Reports:**\n- Due within 30 days after the end of each calendar quarter\n- Must reconcile monthly reports\n- Must include percentage rent calculation\n\n**Annual Sales Statement:**\n- Due within 60 days after end of each Lease Year\n- Must be certified by Tenant's accountant or CFO\n- Must include full annual reconciliation\n\n**Reporting Deadlines:**\n- Monthly: 15th of following month\n- Quarterly: 30 days after quarter end\n- Annual: By July 30 each year (60 days after May 31 year-end)",
+      "sections": ["Section 5.3", "Sales Reporting Requirements"],
+      "pages": ["Page 10"],
+      "exactLanguage": "\"Tenant shall provide Landlord with a written statement of Gross Sales within fifteen (15) days after the end of each calendar month, and within thirty (30) days after the end of each calendar quarter.\"",
+      "interpretationNotes": "The reporting requirements are designed to allow Landlord to monitor percentage rent obligations and verify compliance. The 15-day monthly deadline is tight and requires Tenant to have efficient accounting systems in place.",
+      "confidence": "High",
+      "confidenceReason": "Reporting schedule is explicitly detailed with specific deadlines.",
+      "caveats": "Late or inaccurate reports can trigger penalties and audit rights. Tenant should implement automated reporting systems to ensure compliance.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the penalty for the Tenant not submitting their sales in the time?",
+      "answer": "**Late Sales Report Penalties:**\n\n**Initial Penalty:**\n- $250 for the first 5 days late\n- Applies per report (monthly, quarterly, or annual)\n\n**Escalating Penalty:**\n- Additional $50 per day after the first 5 days\n- No cap specified on daily penalties\n\n**Additional Consequences:**\n- Landlord may estimate Gross Sales and bill Tenant\n- Tenant loses right to dispute estimated amount if report is more than 30 days late\n- Repeated violations (3+ in any 12-month period) may constitute material default\n- May trigger audit rights at Tenant's expense (Landlord can audit immediately)\n\n**Example Calculation:**\n- 20 days late = $250 (first 5 days) + $750 (15 days × $50) = **$1,000 total penalty**\n- 45 days late = $250 + $2,000 (40 days × $50) = **$2,250 total penalty**",
+      "sections": ["Section 5.3", "Late Report Penalties", "Section 16.1", "Events of Default"],
+      "pages": ["Page 10", "Page 26"],
+      "exactLanguage": "\"If Tenant fails to timely provide such sales statement, Tenant shall pay to Landlord as a penalty the sum of Two Hundred Fifty Dollars ($250) for the first five (5) days of delinquency, and an additional Fifty Dollars ($50) per day for each day thereafter. Landlord may estimate Gross Sales and bill Tenant accordingly, which estimate shall be binding if Tenant fails to provide actual sales figures within thirty (30) days.\"",
+      "interpretationNotes": "The penalty structure is more modest than Chef Art Smith's lease but still creates financial pressure for timely compliance. The $50/day escalation after the initial 5 days is reasonable but can accumulate quickly. The most significant risk is Landlord's ability to estimate sales and make that estimate binding after 30 days, which could result in overpayment of percentage rent. Three violations in 12 months triggering default status is particularly concerning as it could jeopardize the entire lease.",
+      "confidence": "High",
+      "confidenceReason": "Penalty amounts, calculation method, and consequences are explicitly stated.",
+      "caveats": "Tenant should implement calendar reminders and automated reporting to avoid penalties. The binding estimate provision after 30 days is particularly problematic and could result in disputes over actual vs. estimated sales.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the Landlord's Responsibility to Repair?",
+      "answer": "**Landlord's Repair Obligations:**\n\n**Structural Elements:**\n- Foundation and structural frame\n- Load-bearing walls and columns\n- Roof structure and waterproofing\n- Exterior walls and facade\n- Structural floor slabs\n\n**Building Systems (Common/Shared):**\n- Base building HVAC (up to Premises connection points)\n- Main electrical service and distribution to building\n- Plumbing mains and risers\n- Fire protection systems (building-wide sprinklers and alarms)\n- Elevators and escalators\n\n**Common Areas:**\n- Lobbies, hallways, and corridors\n- Public restrooms\n- Parking areas (if applicable)\n- Exterior walkways and landscaping\n- Common area lighting\n\n**Limitations:**\n- Not responsible for damage caused by Tenant\n- Not responsible for interior Premises elements\n- Tenant must reimburse Landlord for repairs needed due to Tenant's negligence",
+      "sections": ["Section 7.1", "Landlord Repairs"],
+      "pages": ["Page 12"],
+      "exactLanguage": "\"Landlord shall maintain and repair the structural portions of the Building, including foundation, structural frame, load-bearing walls, roof, and exterior walls. Landlord shall also maintain all Common Areas and base building systems serving the Building generally.\"",
+      "interpretationNotes": "Landlord's obligations cover structural and common area maintenance, which is standard for a commercial lease. The key issue is the boundary between Landlord's base building systems and Tenant's interior systems (e.g., where does HVAC responsibility split?).",
+      "confidence": "High",
+      "confidenceReason": "Landlord's structural and common area obligations are clearly delineated.",
+      "caveats": "Disputes may arise over what constitutes 'structural' vs. 'non-structural' repairs. The connection point between base building and Premises-specific systems should be clearly documented.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the Tenant's Responsibility to Repair?",
+      "answer": "**Tenant's Repair & Maintenance Obligations:**\n\n**Interior Premises:**\n- All interior walls, floors, and ceilings (non-structural)\n- Interior doors, locks, and hardware\n- Interior lighting fixtures and bulbs\n- Plumbing fixtures (sinks, toilets, faucets, drains)\n- Interior HVAC units serving the Premises exclusively\n- Electrical outlets, switches, and circuits within Premises\n\n**Restaurant Equipment:**\n- All kitchen equipment (ovens, ranges, refrigerators, freezers, dishwashers)\n- Bar equipment (taps, coolers, ice machines, glassware washers)\n- Point-of-sale systems and technology\n- Furniture, fixtures, and equipment (FF&E)\n- Interior and exterior Tenant signage\n\n**Special Restaurant Requirements:**\n- Grease traps (weekly cleaning or per code)\n- Hood and ventilation systems (quarterly cleaning minimum)\n- Pest control (monthly service required)\n- HVAC filters (monthly replacement)\n- Fire extinguishers (annual inspection)\n- Floor drains and grease interceptors\n\n**Standard of Maintenance:**\n- \"Good order and repair\" throughout the Term\n- Consistent with first-class restaurant standards\n- Compliance with all health, safety, and building codes\n- Prompt repair of any damage or deterioration\n\n**Repair Timeline:**\n- Emergency repairs: Immediate\n- Non-emergency: Within 10 days of notice or need\n- If Tenant fails to repair, Landlord may perform work and charge Tenant (plus 15% administrative fee)",
+      "sections": ["Section 7.2", "Tenant Repairs", "Section 8.1", "Equipment Maintenance"],
+      "pages": ["Page 12-13", "Page 15"],
+      "exactLanguage": "\"Tenant shall, at its sole cost and expense, keep and maintain the Premises in good order and repair, including but not limited to all interior walls, floors, ceilings, doors, windows, plumbing fixtures, electrical fixtures, HVAC equipment serving the Premises exclusively, and all alterations, improvements, and equipment installed by Tenant. Tenant shall contract for regular pest control, grease trap maintenance, hood cleaning, and such other services as may be required by applicable health and safety codes.\"",
+      "interpretationNotes": "Tenant's repair obligations are comprehensive and cover essentially everything within the Premises. The requirement for specific services (pest control, grease trap, hood cleaning) is typical for restaurant leases and mandated by health codes. The 'first-class restaurant standards' language is subjective but likely means Tenant cannot defer maintenance or allow visible deterioration. The 15% administrative fee if Landlord must step in is designed to encourage Tenant self-performance.",
+      "confidence": "High",
+      "confidenceReason": "Detailed in the maintenance section of the lease with specific requirements for restaurant operations.",
+      "caveats": "The boundary between Tenant and Landlord repairs (especially for HVAC and plumbing) should be clearly documented. The 10-day repair deadline may be challenging for complex repairs requiring specialized contractors or parts ordering.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What Utilities are the Tenant Responsible For?",
+      "answer": "**Tenant-Paid Utilities:**\n\n**Direct Utilities:**\n- Electricity for the Premises (separately metered)\n- Gas service for kitchen equipment (if separately metered)\n- Water and sewer (based on Tenant's usage)\n- Telephone and internet service\n- Cable/satellite TV (if applicable)\n- Trash and recycling collection\n\n**Tenant's Utility Obligations:**\n- Pay all charges directly to utility companies (if separately metered)\n- Pay Landlord for utilities if not separately metered (based on usage or allocation)\n- Maintain utility service in Tenant's name throughout Term\n- Not permit termination or interruption of service\n- Pay all connection fees and deposits\n\n**Cost Responsibility:**\n- Tenant pays 100% of Premises-specific utility costs\n- Tenant pays proportionate share of common area utilities (if applicable)\n- All costs and charges related to Tenant's operations",
+      "sections": ["Section 12.1", "Utilities"],
+      "pages": ["Page 21"],
+      "exactLanguage": "\"Tenant shall pay for all utilities serving the Premises, including without limitation electricity, gas, water, sewer, telephone, and internet service. If utilities are not separately metered, Tenant shall pay Landlord for Tenant's proportionate share based on reasonable allocation.\"",
+      "interpretationNotes": "Tenant's responsibility for all Premises utilities is standard for restaurant leases. Restaurant operations typically have high utility consumption due to kitchen equipment, HVAC for cooking heat, and refrigeration. If utilities are not separately metered, the allocation method should be clearly defined to avoid disputes.",
+      "confidence": "High",
+      "confidenceReason": "Utility responsibility is clearly assigned to Tenant.",
+      "caveats": "If utilities are not separately metered, Tenant should negotiate a clear allocation methodology (e.g., square footage, estimated usage) to avoid disputes. High restaurant utility costs should be factored into operating budgets.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the conditions for Tenant to be allowed to transfer or assign the Lease?",
+      "answer": "**Assignment/Transfer Requirements:**\n\n**Landlord Consent Required:**\n- Tenant must obtain Landlord's prior written consent\n- Consent cannot be unreasonably withheld, conditioned, or delayed\n- Request must be in writing with full details of proposed assignee\n\n**Information Required for Consent:**\n- Proposed assignee's financial statements (2-3 years)\n- Business plan and operating experience\n- Credit references and background information\n- Proposed use of Premises (must be consistent with Permitted Use)\n- Evidence of adequate capitalization\n\n**Landlord's Evaluation Criteria:**\n- Financial strength of proposed assignee\n- Restaurant operating experience and reputation\n- Compatibility with Navy Pier's tenant mix\n- Ability to maintain quality operations\n- Creditworthiness and business history\n\n**Assignment Process:**\n1. Tenant submits written request with required information\n2. Landlord has 30 days to approve or reasonably reject\n3. If approved, parties execute assignment agreement\n4. Tenant remains liable unless expressly released by Landlord\n5. Assignee assumes all Tenant obligations\n\n**Permitted Transfers (No Consent Required):**\n- Transfer to parent, subsidiary, or affiliate (if capitalization maintained)\n- Transfer in connection with sale of Tenant's business (if acquirer assumes lease)\n- Transfer to entity controlled by Tenant's principals\n\n**Assignment Fee:**\n- Tenant must pay Landlord's reasonable attorneys' fees for review\n- Possible assignment fee (if specified in lease)",
+      "sections": ["Section 16.1", "Assignment and Subletting"],
+      "pages": ["Page 24-25"],
+      "exactLanguage": "\"Tenant shall not assign this Lease or sublet the Premises, in whole or in part, without Landlord's prior written consent, which consent shall not be unreasonably withheld, conditioned, or delayed. Notwithstanding such consent, Tenant shall remain liable for all obligations under this Lease unless expressly released by Landlord in writing.\"",
+      "interpretationNotes": "The 'reasonable consent' standard protects Tenant from arbitrary rejection while allowing Landlord to maintain quality control over Navy Pier tenants. The fact that Tenant remains liable even after assignment is significant and means Billy Goat would remain on the hook if an assignee defaults. The permitted transfers to affiliates provide flexibility for corporate restructuring without needing Landlord approval.",
+      "confidence": "High",
+      "confidenceReason": "Assignment provisions are clearly defined with reasonable consent standard.",
+      "caveats": "Tenant's continued liability after assignment is a significant risk. Billy Goat should negotiate for a release of liability if an approved assignee has comparable or better financial strength. The 30-day approval timeline should be monitored carefully.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Base Rent per year and month?",
+      "answer": "**Base Rent Schedule (Initial 10-Year Term):**\n\n**Years 1-2 (June 2022 - May 2024):**\n- Annual: $180,000\n- Monthly: $15,000\n\n**Years 3-4 (June 2024 - May 2026):**\n- Annual: $189,000\n- Monthly: $15,750\n- Increase: 5% from Years 1-2\n\n**Years 5-6 (June 2026 - May 2028):**\n- Annual: $198,450\n- Monthly: $16,537.50\n- Increase: 5% from Years 3-4\n\n**Years 7-8 (June 2028 - May 2030):**\n- Annual: $208,372.50\n- Monthly: $17,364.38\n- Increase: 5% from Years 5-6\n\n**Years 9-10 (June 2030 - May 2032):**\n- Annual: $218,791.13\n- Monthly: $18,232.59\n- Increase: 5% from Years 7-8\n\n**Per Square Foot:**\n- Year 1: $63.16/sq ft\n- Year 10: $76.77/sq ft\n\n**Renewal Term (if exercised):**\n- To be negotiated or Fair Market Value\n- Cannot be less than $218,791.13 annually",
+      "sections": ["Exhibit M", "Rent Schedule", "Section 5.1"],
+      "pages": ["Exhibit M", "Page 8"],
+      "exactLanguage": "\"Base Rent shall be as set forth in Exhibit M attached hereto, payable in equal monthly installments in advance on the first day of each month.\"",
+      "interpretationNotes": "The 5% biennial increases are predictable and allow for budgeting. The total increase over 10 years is approximately 21.6%, which is reasonable for a prime Navy Pier location. The per-square-foot rate starts at $63.16 and increases to $76.77, which should be compared to market rates for Navy Pier restaurant spaces.",
+      "confidence": "High",
+      "confidenceReason": "Rent schedule is detailed in Exhibit M with specific amounts for each year.",
+      "caveats": "The 5% increases occur every 2 years, not annually. Tenant should budget for these step-ups. Renewal rent is subject to negotiation or FMV, creating uncertainty for long-term planning.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Common Area Maintenance per year and month?",
+      "answer": "**CAM Structure:**\n\n**Years 1-2:**\n- Annual: $28,500\n- Monthly: $2,375\n\n**Years 3-4:**\n- Annual: $29,925\n- Monthly: $2,493.75\n- Increase: 5% from Years 1-2\n\n**Years 5-6:**\n- Annual: $31,421.25\n- Monthly: $2,618.44\n- Increase: 5% from Years 3-4\n\n**Years 7-8:**\n- Annual: $32,992.31\n- Monthly: $2,749.36\n- Increase: 5% from Years 5-6\n\n**Years 9-10:**\n- Annual: $34,641.93\n- Monthly: $2,886.83\n- Increase: 5% from Years 7-8\n\n**CAM Includes:**\n- Common area cleaning and janitorial\n- Common area utilities and lighting\n- Landscaping and grounds maintenance\n- Snow removal and exterior maintenance\n- Common area repairs and replacements\n- Security services (if provided)\n- General building maintenance\n\n**CAM Reconciliation:**\n- Charges are estimated and paid monthly\n- Annual reconciliation performed after each Lease Year\n- Tenant pays any overage or receives credit for underpayment",
+      "sections": ["Exhibit M", "Section 5.2"],
+      "pages": ["Exhibit M", "Page 9"],
+      "exactLanguage": "\"Common Area Maintenance charges shall be as set forth in Exhibit M, subject to annual reconciliation based on actual costs incurred by Landlord.\"",
+      "interpretationNotes": "CAM charges are structured similar to Base Rent with 5% biennial increases. The $2,375/month starting CAM ($10/sq ft annually) is reasonable for a high-traffic location like Navy Pier. The reconciliation provision means Tenant could owe additional amounts if actual costs exceed estimates.",
+      "confidence": "High",
+      "confidenceReason": "CAM schedule is detailed in Exhibit M with specific amounts and escalation.",
+      "caveats": "Actual CAM costs may exceed budgeted amounts, leading to year-end reconciliation charges. Tenant should request detailed CAM accounting to verify charges are reasonable and properly allocated.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Marketing Fee per year and month?",
+      "answer": "**Marketing Fee Schedule:**\n\n**Years 1-2:**\n- Annual: $14,250\n- Monthly: $1,187.50\n\n**Years 3-4:**\n- Annual: $14,962.50\n- Monthly: $1,246.88\n- Increase: 5% from Years 1-2\n\n**Years 5-6:**\n- Annual: $15,710.63\n- Monthly: $1,309.22\n- Increase: 5% from Years 3-4\n\n**Years 7-8:**\n- Annual: $16,496.16\n- Monthly: $1,374.68\n- Increase: 5% from Years 5-6\n\n**Years 9-10:**\n- Annual: $17,320.96\n- Monthly: $1,443.41\n- Increase: 5% from Years 7-8\n\n**Marketing Fee Purpose:**\n- Joint marketing and advertising for Navy Pier\n- Promotional events and activities\n- Website and digital marketing\n- Seasonal campaigns and special events\n- Tenant directory and wayfinding\n- Public relations and media outreach\n\n**Governance:**\n- Marketing fund managed by Navy Pier, Inc.\n- May include tenant advisory committee\n- Annual marketing plan and budget",
+      "sections": ["Exhibit M", "Section 5.2", "Marketing Fund"],
+      "pages": ["Exhibit M", "Page 9"],
+      "exactLanguage": "\"Marketing Fee shall be as set forth in Exhibit M, to be used for joint marketing and promotion of Navy Pier and its tenants.\"",
+      "interpretationNotes": "The Marketing Fee ($1,187.50/month or ~$5/sq ft annually in Year 1) is standard for retail and restaurant locations in high-traffic venues. The fee funds collective marketing that benefits all Navy Pier tenants, including Billy Goat. The 5% biennial increases mirror Base Rent and CAM escalations.",
+      "confidence": "High",
+      "confidenceReason": "Marketing fee schedule is detailed in Exhibit M with specific amounts.",
+      "caveats": "Tenant has limited control over how marketing funds are spent. Billy Goat should request annual marketing reports to ensure funds are used effectively and benefit restaurant tenants.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Percentage Rent charges and breakpoint per year?",
+      "answer": "**Percentage Rent Structure:**\n\n**Rate:** 6% of Gross Sales exceeding the annual Breakpoint\n\n**Annual Breakpoints:**\n- Years 1-2: $3,700,000\n- Years 3-4: $3,885,000 (5% increase)\n- Years 5-6: $4,079,250 (5% increase)\n- Years 7-8: $4,283,213 (5% increase)\n- Years 9-10: $4,497,373 (5% increase)\n\n**Calculation Example (Year 1):**\n- If Gross Sales = $4,200,000\n- Excess over Breakpoint = $500,000\n- Percentage Rent = $500,000 × 6% = **$30,000**\n\n**Payment Schedule:**\n- Calculated quarterly\n- Due within 30 days after quarter end\n- Based on cumulative annual sales vs. annual breakpoint\n\n**Gross Sales Definition:**\n- All revenues from operations at the Premises\n- Includes food, beverages, merchandise sales\n- Cash, credit, gift card, and online sales\n\n**Exclusions from Gross Sales:**\n- Sales tax and other taxes collected for government\n- Refunds and returns (to original purchaser)\n- Tips and gratuities paid to employees\n- Gift card sales (until redeemed)",
+      "sections": ["Exhibit M", "Section 5.3", "Percentage Rent"],
+      "pages": ["Exhibit M", "Page 9-10"],
+      "exactLanguage": "\"Percentage Rent shall be six percent (6%) of Gross Sales exceeding the annual Breakpoint as set forth in Exhibit M.\"",
+      "interpretationNotes": "The 6% percentage rent rate is standard for restaurant leases. The breakpoint of $3.7M in Year 1 means Billy Goat only pays percentage rent if annual sales exceed this threshold. The 5% biennial increases in the breakpoint align with Base Rent increases, maintaining a consistent rent-to-sales ratio over time. If sales are below the breakpoint, no percentage rent is due.",
+      "confidence": "High",
+      "confidenceReason": "Percentage rent rate and breakpoints are explicitly detailed in Exhibit M.",
+      "caveats": "Accurate sales tracking is critical. Any sales not properly recorded could trigger disputes or audit findings. The Gross Sales definition should be carefully reviewed to understand what's included/excluded.",
+      "documentId": "BILLY_GOAT_LEASE_2022",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    }
+  ],
+  "executiveSummary": {
+    "tenant": "Billy Goat Tavern",
+    "documentId": "BILLY_GOAT_LEASE_2022",
+    "summary": "This 10-year restaurant lease, commencing June 1, 2022, establishes Billy Goat Tavern's presence at Navy Pier in a 2,850 square foot ground-floor location. The lease provides favorable terms for an iconic Chicago brand, with moderate base rent starting at $15,000/month ($63/sq ft annually) and escalating 5% every two years. In addition to base rent, Tenant pays CAM ($2,375/month), Marketing Fee ($1,188/month), and percentage rent (6% of sales over $3.7M annually). The lease includes one 5-year renewal option, exercisable with 180 days notice. Billy Goat is responsible for all interior maintenance, utilities, and compliance with restaurant-specific requirements (grease traps, hood cleaning, pest control). The permitted use is limited to full-service restaurant and bar operations, aligning with Billy Goat's traditional tavern concept. Assignment requires Landlord consent (not to be unreasonably withheld), but Tenant remains liable even after assignment unless expressly released. Sales reporting is required monthly (within 15 days) with penalties for late submission starting at $250 plus $50/day. The lease provides long-term stability in a prime Navy Pier location with predictable rent escalations and standard restaurant lease provisions.",
+    "keyTerms": {
+      "commencement": "June 1, 2022",
+      "expiration": "May 31, 2032 (initial term); May 31, 2037 if renewal option exercised",
+      "premisesSize": "Approximately 2,850 rentable square feet, ground floor, Suite 210",
+      "baseRent": "Starting at $180,000/year ($15,000/month); escalating 5% every 2 years; ending at $218,791/year in Year 10",
+      "renewalOptions": "One 5-year renewal option; requires 180 days notice; rent to be negotiated or set at Fair Market Value (minimum of final year base rent)"
+    },
+    "criticalDates": [
+      {
+        "date": "2022-06-01",
+        "description": "Lease Commencement Date - rent obligations begin"
+      },
+      {
+        "date": "2024-06-01",
+        "description": "First rent escalation (5% increase to $15,750/month)"
+      },
+      {
+        "date": "2026-06-01",
+        "description": "Second rent escalation (5% increase to $16,537.50/month)"
+      },
+      {
+        "date": "2028-06-01",
+        "description": "Third rent escalation (5% increase to $17,364.38/month)"
+      },
+      {
+        "date": "2030-06-01",
+        "description": "Fourth rent escalation (5% increase to $18,232.59/month)"
+      },
+      {
+        "date": "2031-12-03",
+        "description": "Deadline to exercise renewal option (180 days before Term expiration)"
+      },
+      {
+        "date": "2032-05-31",
+        "description": "Initial Term expiration date"
+      },
+      {
+        "date": "Monthly by 15th",
+        "description": "Monthly sales reports due"
+      },
+      {
+        "date": "Quarterly within 30 days",
+        "description": "Quarterly sales reports and percentage rent payment due"
+      },
+      {
+        "date": "Annually by July 30",
+        "description": "Annual certified sales statement due"
+      }
+    ],
+    "majorObligations": {
+      "landlord": [
+        "Maintain structural elements (foundation, frame, load-bearing walls, roof, exterior)",
+        "Maintain and repair common areas (lobbies, hallways, exterior)",
+        "Maintain base building systems (HVAC, electrical, plumbing to connection points)",
+        "Provide fire protection systems and elevators",
+        "Provide common area services included in CAM",
+        "Not unreasonably withhold consent to assignment or sublease",
+        "Deliver Premises in broom-clean condition suitable for restaurant use"
+      ],
+      "tenant": [
+        "Pay base rent monthly in advance ($15,000-$18,233/month over Term)",
+        "Pay CAM monthly ($2,375-$2,887/month over Term)",
+        "Pay Marketing Fee monthly ($1,188-$1,443/month over Term)",
+        "Pay percentage rent quarterly (6% of sales over breakpoint)",
+        "Submit monthly sales reports within 15 days of month-end",
+        "Submit quarterly and annual sales reports with certifications",
+        "Maintain all interior Premises in good repair",
+        "Maintain all restaurant equipment and FF&E",
+        "Contract for grease trap, hood cleaning, and pest control services",
+        "Pay all utilities for the Premises",
+        "Obtain and maintain all required licenses and permits (including liquor license)",
+        "Maintain required insurance (general liability, workers comp, property)",
+        "Use Premises solely for restaurant and bar operations",
+        "Comply with all applicable health, safety, and building codes",
+        "Not assign or sublet without Landlord consent"
+      ]
+    },
+    "risks": [
+      "Tenant remains liable after assignment unless expressly released - could be on hook if assignee defaults",
+      "No cap on percentage rent if sales significantly exceed breakpoint - could become expensive burden in high-volume years",
+      "Sales reporting penalties accumulate quickly ($250 + $50/day) and repeated violations may constitute default",
+      "Landlord can estimate sales and make binding if Tenant is 30+ days late with reports - risk of overpaying percentage rent",
+      "Renewal rent uncertainty - subject to negotiation or Fair Market Value with only a floor of final year rent",
+      "Biennial 5% rent increases compound over time - Year 10 rent is 21.6% higher than Year 1",
+      "CAM subject to reconciliation - actual costs may exceed budgeted amounts",
+      "Limited control over Marketing Fee expenditures - $14,250-$17,321/year with no guaranteed ROI",
+      "180-day renewal notice deadline is strict - missing deadline loses renewal rights entirely",
+      "High restaurant operating costs (utilities, equipment, grease trap, hood cleaning) in addition to rent",
+      "Navy Pier foot traffic is highly seasonal - summer peak vs. winter low may create cash flow challenges",
+      "Assignment requires consent even though 'not unreasonably withheld' - still creates uncertainty and delay"
+    ],
+    "opportunities": [
+      "Prime Navy Pier location with 9+ million annual visitors provides strong customer traffic",
+      "Billy Goat brand recognition and Chicago icon status align well with tourist destination",
+      "Moderate starting rent of $63/sq ft is reasonable for Navy Pier prime location",
+      "Predictable 5% biennial rent increases allow for long-term financial planning",
+      "One renewal option provides potential 15-year total occupancy",
+      "Percentage rent only kicks in above $3.7M sales - provides relief if sales are modest",
+      "Permitted transfers to affiliates without consent allows corporate flexibility",
+      "Marketing Fee funds collective Navy Pier promotion benefiting all tenants",
+      "Exclusive restaurant/bar use protects against competing uses in Premises",
+      "No personal guaranty mentioned - corporate entity structure limits liability",
+      "Standard repair obligations - no unusual maintenance burdens beyond typical restaurant operations",
+      "Quarterly percentage rent payment (vs. monthly) improves cash flow management"
+    ]
+  }
+}

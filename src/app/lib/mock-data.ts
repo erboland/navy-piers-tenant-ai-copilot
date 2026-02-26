@@ -9,6 +9,7 @@ export interface Vendor {
 export const mockVendors: Vendor[] = [
   { id: "6", name: "Chef Art Smith's Reunion", type: "Restaurant", location: "Suite 300" },
   { id: "7", name: "Billy Goat Tavern", type: "Restaurant & Bar", location: "Suite 210" },
+  { id: "8", name: "Chicago Shakespeare Theater", type: "Theater & Parking", location: "800 E. Grand Ave" },
 ];
 
 // Mock financial data

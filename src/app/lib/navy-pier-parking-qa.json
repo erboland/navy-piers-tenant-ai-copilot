@@ -1,0 +1,383 @@
+{
+  "tenant": "Chicago Shakespeare Theater - Parking Agreement",
+  "questions": [
+    {
+      "question": "What is the legal name of the tenant?",
+      "answer": "CHICAGO SHAKESPEARE THEATER, an Illinois not-for-profit corporation",
+      "sections": ["Preamble", "Definitions Section 2"],
+      "pages": ["Page 1"],
+      "exactLanguage": "\"CHICAGO SHAKESPEARE THEATER, an Illinois not-for-profit corporation ('CST') located at 800 E. Grand Ave., Chicago, Illinois 60611.\"",
+      "interpretationNotes": "CST is the party receiving parking rights under this agreement. While this is technically a parking agreement rather than a lease, CST is identified as the tenant under the underlying 1997 and 2016 lease agreements referenced in the document.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the preamble with full legal entity information.",
+      "caveats": "This is a parking agreement, not a typical tenant lease. The actual tenant leases are the 1997 Lease Agreement and 2016 Lease Agreement, which are referenced but not included in this document.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Lease commencement date?",
+      "answer": "February 5, 2016 (Effective Date)",
+      "sections": ["Preamble", "Section 8 (Term)"],
+      "pages": ["Page 1", "Page 4"],
+      "exactLanguage": "\"THIS AGREEMENT FOR CHICAGO SHAKESPEARE THEATER RELATED PARKING AT NAVY PIER ('Parking Agreement') made as of the 5th day of February, 2016, (the 'Effective Date')... This Parking Agreement shall be in full force and effect from and after the Effective Date set forth above.\"",
+      "interpretationNotes": "The Parking Agreement's Effective Date is February 5, 2016. However, the provisions of Sections 4, 5, 6, and 7 apply from and after the Rent Commencement Date as set forth in the 2016 Lease Agreement (for the Yard Theater).",
+      "confidence": "High",
+      "confidenceReason": "The Effective Date is explicitly stated in the preamble and confirmed in Section 8.",
+      "caveats": "Some provisions don't take effect until the Rent Commencement Date of the 2016 Lease Agreement, creating a phased implementation.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Term of the Lease?",
+      "answer": "Co-extensive with the 1997 Lease Agreement and 2016 Lease Agreement\n\n**Term Details:**\n- Effective Date: February 5, 2016\n- Expiration: Upon the expiration or termination of either the 1997 Lease Agreement OR the 2016 Lease Agreement, whichever occurs first\n- The parking agreement is tied to the underlying theater leases\n\n**Termination Rights:**\n- CST may terminate both underlying leases (which would terminate this parking agreement) if NPI cannot provide required parking for 12+ consecutive months",
+      "sections": ["Section 8 (Term)", "Section 6 (Alternative Parking)"],
+      "pages": ["Page 4", "Page 3-4"],
+      "exactLanguage": "\"It is understood that the Parties intend that this Parking Agreement shall be in effect for a term co-extensive with the 1997 Lease Agreement and the 2016 Lease Agreement. To that end, this Parking Agreement shall expire upon the expiration or termination of the 1997 Lease Agreement or the 2016 Lease Agreement, whichever occurred first.\"",
+      "interpretationNotes": "The parking agreement does not have its own independent term but rather follows the term of the underlying theater leases. This creates a dependency structure where the parking rights are contingent on the continued existence of at least one of the two theater leases. The termination provision in Section 6 provides CST with leverage if parking cannot be provided, allowing termination of the theater leases (and by extension, this parking agreement) after 12 months of inability to provide parking.",
+      "confidence": "High",
+      "confidenceReason": "The term structure is explicitly defined and clearly states the co-extensive nature and termination conditions.",
+      "caveats": "The actual expiration date is unknown without access to the 1997 and 2016 Lease Agreements. The parking agreement automatically terminates when either underlying lease expires or is terminated.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "Is there an Option to Renew and what is it?",
+      "answer": "Not explicitly stated in this Parking Agreement. The renewal would follow the renewal terms of the 1997 Lease Agreement and 2016 Lease Agreement.",
+      "sections": ["Section 8 (Term)"],
+      "pages": ["Page 4"],
+      "exactLanguage": "\"It is understood that the Parties intend that this Parking Agreement shall be in effect for a term co-extensive with the 1997 Lease Agreement and the 2016 Lease Agreement.\"",
+      "interpretationNotes": "Since the Parking Agreement is co-extensive with the underlying theater leases, any renewal of those leases would presumably extend this parking agreement as well. However, this is not explicitly stated, which could create ambiguity if the theater leases are renewed.",
+      "confidence": "Medium",
+      "confidenceReason": "The renewal rights are implied by the co-extensive nature but not explicitly addressed.",
+      "caveats": "This should be clarified in writing if the underlying leases are renewed to ensure parking rights continue. The parties should execute an amendment or new parking agreement confirming the continuation of these terms.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Inferred",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is the Permitted Use defined as?",
+      "answer": "**Primary Use:**\nParking for Chicago Shakespeare Theater patrons, staff, and operations\n\n**Specific Categories:**\n\n**Performance Discount Parking:**\n- Parking for CST patrons attending Performances\n- Performances include: Shakespearean plays, theatrical performances, educational and outreach programs, lectures, and other programming\n\n**Production/Rehearsal Day Parking:**\n- Up to 52 spaces (Aug 15 - Jun 15)\n- Up to 17 spaces (Jun 16 - Aug 14)\n- For production and rehearsal activities\n\n**Included Parking:**\n- 15 unreserved spaces without charge\n- For general CST operational use",
+      "sections": ["Section 2(l) (Definitions)", "Section 4", "Section 5"],
+      "pages": ["Page 1-2", "Page 2-3", "Page 3"],
+      "exactLanguage": "\"'Performance' means live performances of Shakespearean plays and other theatrical performances, educational and outreach programs, lectures and other programming produced or presented by CST or its licensee at either the 1997 Lease Agreement Premises or the 2016 Lease Agreement Premises all in accordance with applicable laws and ordinances.\"",
+      "interpretationNotes": "The permitted use is specifically tied to CST's theatrical operations at Navy Pier, including patron parking during performances, staff/production parking during work periods, and general operational parking. The use is restricted to supporting CST's theater activities and cannot be used for unrelated purposes or subleased to third parties.",
+      "confidence": "High",
+      "confidenceReason": "The definition of Performance is explicit, and the three categories of parking use are clearly delineated.",
+      "caveats": "The parking rights are subordinate to and support the underlying theater leases. If the theater operations cease, the parking rights would also terminate.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Premises?",
+      "answer": "**Parking Locations:**\n\nThis agreement covers access to Navy Pier parking facilities, specifically:\n\n**Primary Facilities:**\n- East Garage\n- West Garage\n- (Collectively referred to as \"Parking Garages\")\n\n**Included Parking Spaces:**\n- Minimum 5 spaces within the Parking Garages\n- Up to 10 additional spaces at locations designated by NPI\n\n**Performance Parking:**\n- Dedicated Spaces within the Parking Garages (up to 75-350 spaces depending on theater and season)\n- Non-reserved parking areas of Navy Pier (when Dedicated Spaces are insufficient)\n\n**Note:** This is a parking rights agreement, not a premises lease. CST does not lease or control any specific parking spaces but has rights to use designated quantities of spaces in NPI's parking facilities.",
+      "sections": ["Section 2(h) (Definitions)", "Section 4", "Section 5"],
+      "pages": ["Page 1", "Page 2-3"],
+      "exactLanguage": "\"'Parking Garages' means the two parking venues currently located at Navy Pier which include garages commonly referred to as the 'East Garage' and the 'West Garage.'\"",
+      "interpretationNotes": "Unlike a traditional lease where a tenant has exclusive possession of defined premises, this agreement grants CST the right to use a certain number of parking spaces within NPI's parking facilities. The spaces are not fixed or assigned but are allocated based on CST's needs and NPI's availability. This is a license or right-to-use arrangement rather than a possessory leasehold interest.",
+      "confidence": "High",
+      "confidenceReason": "The parking facilities are explicitly identified, though the specific spaces are not permanently assigned.",
+      "caveats": "CST does not have exclusive control over any particular parking spaces. The spaces are allocated on an as-needed basis, and NPI retains management and control of the parking facilities.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the size of the Premises?",
+      "answer": "**Number of Parking Spaces (not square footage):**\n\n**Included Parking (Free):**\n- 15 unreserved parking spaces\n- Minimum 5 spaces in Parking Garages\n- Balance at NPI-designated locations\n\n**Performance Discount Parking:**\n- Up to 75 spaces for Yard Theater (October 1 - March 31, with blackout dates)\n- Up to 350 spaces for Main Stage and/or Studio Theater\n- Additional overflow parking available in non-reserved areas\n\n**Production/Rehearsal Parking:**\n- Up to 52 spaces (August 15 - June 15)\n- Up to 17 spaces (June 16 - August 14)\n\n**Maximum Potential Usage:**\n- Up to 417 total spaces (15 included + 350 performance + 52 production) during peak periods",
+      "sections": ["Section 4", "Section 5"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"CST shall have the right, without charge during the Term of this Parking Agreement and any extensions thereto, to fifteen (15) unreserved parking spaces... Up to seventy-five (75) spaces for Performances in the Yard Theater... Up to three hundred fifty (350) for Performances in the Main Stage and/or the Studio Theater.\"",
+      "interpretationNotes": "This is a parking rights agreement, so 'size' is measured in number of parking spaces rather than square footage. The total number of spaces available to CST varies by season, theater, and day type (performance vs. production). CST does not pay rent for these spaces but receives a 30% discount on parking fees (except for the 15 included spaces which are free).",
+      "confidence": "High",
+      "confidenceReason": "The number of spaces in each category is explicitly stated.",
+      "caveats": "The spaces are not always all available simultaneously. For example, Yard Theater spaces are limited to October-March with blackouts. Some spaces are seasonal or conditional based on performance schedules.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When is the Base Rental Due?",
+      "answer": "**No Base Rent - This is a parking discount agreement**\n\nInstead of paying base rent, CST pays parking fees at a discounted rate:\n\n**Discount Structure:**\n- 30% discount from Navy Pier's then-advertised parking rates\n- Applied to Performance Parking and Production/Rehearsal Parking\n- 15 Included Parking Spaces are provided free of charge\n\n**Payment Mechanism:**\n- CST patrons and staff pay discounted parking fees directly to NPI\n- CST reimburses NPI if aggregate discounts exceed 30% (within 30 days of invoice)\n- Calculations are performed annually by NPI",
+      "sections": ["Section 4", "Section 5"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"NPI shall make available at a discount from Navy Pier's then advertised rates of not less than thirty percent (30%)... CST shall reimburse NPI within thirty (30) days of invoice for the value of discounts given in excess of thirty percent (30%) in aggregate in the prior calendar year.\"",
+      "interpretationNotes": "This is not a traditional lease with monthly rent payments. Instead, it's a parking access agreement where CST receives discounted parking rates. The only payment obligation occurs if CST implements tiered discounts that exceed the 30% aggregate cap, in which case CST must reimburse NPI for the excess discount value. The 15 Included Parking Spaces are provided at no cost as part of the agreement.",
+      "confidence": "High",
+      "confidenceReason": "The discount structure and reimbursement terms are clearly defined.",
+      "caveats": "The actual cost to CST depends on usage levels and the prevailing Navy Pier parking rates, which can fluctuate. CST should monitor discount calculations to avoid unexpected reimbursement obligations.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When does the Tenant have to Submit their sales by each week or month?",
+      "answer": "**Quarterly Parking Usage Reports**\n\nCST must submit:\n\n**1. Quarterly Report (Parking Usage Report):**\n- Frequency: Quarterly\n- Content: Information for each Performance schedule\n- Timing: As soon as schedule is available, but no later than the beginning of each season\n- Purpose: Notify parking manager of number of spaces required and time periods\n\n**2. Pre-Performance Confirmation (Parking Usage Confirmation):**\n- Frequency: Before each specific Performance\n- Timing: At least 24 hours prior to each Performance\n- Content: Confirm number of spaces required and time period\n- Delivery: In writing\n\n**3. Production/Rehearsal Usage Requests:**\n- Frequency: As needed\n- Timing: At least 24 hours prior to actual usage\n- Content: Request for production/rehearsal day parking",
+      "sections": ["Section 4(a)(2) (Performance Discount Parking)", "Section 4(b) (Production/Rehearsal Parking)"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"CST shall produce a quarterly report (the 'Parking Usage Report'), with information for each Performance schedule being provided as soon as it is available, but no later than the beginning of each season... At least twenty-four (24) hours prior to each specific Performance, CST will confirm, in writing, the number of parking spaces required... CST shall provide NPI with usage requests at least 24 hours prior to the actual usage.\"",
+      "interpretationNotes": "Unlike a retail lease that requires sales reporting for percentage rent calculation, this parking agreement requires advance notice of parking needs. The reporting is operational (to coordinate parking allocation) rather than financial (to calculate rent). The quarterly schedule provides long-term planning visibility, while the 24-hour confirmations allow for operational adjustments.",
+      "confidence": "High",
+      "confidenceReason": "The reporting requirements are explicitly detailed with specific timing requirements.",
+      "caveats": "Failure to provide timely reports and confirmations could result in CST not receiving the required parking spaces, as NPI may reassign spaces to public use. However, no monetary penalties are specified for late reporting.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the penalty for the Tenant not submitting their sales in the time?",
+      "answer": "**No monetary penalties specified**\n\nThis parking agreement does not include sales reporting requirements or late submission penalties.\n\n**However, there are operational consequences for late parking notifications:**\n\n**Late Parking Usage Confirmation:**\n- If CST fails to provide 24-hour advance notice of parking needs, spaces may not be available\n- NPI may have reassigned Dedicated Spaces to public use\n- CST would need to rely on overflow parking (if available)\n\n**Unused Reserved Spaces:**\n- Dedicated Spaces not needed by CST patrons may be reassigned by NPI for public use\n- Dedicated Spaces needed but unused are held for 1 hour after Performance begins, then may be reassigned\n- This prevents CST from blocking spaces they don't need\n\n**Over-Discount Penalty:**\n- If CST implements tiered discounts exceeding 30% in aggregate, CST must reimburse NPI within 30 days of invoice\n- No specific late payment penalty stated for this reimbursement",
+      "sections": ["Section 4(a)(2)", "Section 4(c)"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"Dedicated Spaces determined to not be needed by CST patrons for a Performance may be reassigned by NPI for public use at standard charges. Dedicated Spaces determined to be needed by CST patrons for a Performance shall be held for one hour after the Performance begins and then may be reassigned by NPI for public use at standard charges... CST shall reimburse NPI within thirty (30) days of invoice for the value of discounts given in excess of thirty percent (30%) in aggregate in the prior calendar year.\"",
+      "interpretationNotes": "The agreement focuses on operational coordination rather than penalties. The consequence of late or missing reports is reduced access to parking rather than financial penalties. This structure incentivizes timely communication while maintaining flexibility for both parties. The lack of specified late payment penalties for discount reimbursements could be problematic and may default to general contract law or Illinois statutory interest rates.",
+      "confidence": "High",
+      "confidenceReason": "The document clearly describes operational consequences but does not establish monetary penalties for late reporting.",
+      "caveats": "The absence of explicit late payment penalties for discount reimbursements is a gap that could lead to disputes. Consider negotiating specific terms if this becomes an issue.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the Landlord's Responsibility to Repair?",
+      "answer": "**Not applicable - This is a parking access agreement, not a premises lease**\n\n**NPI's Obligations Under This Agreement:**\n\n**Parking Provision:**\n- Make available specified parking spaces at discounted rates\n- Provide Dedicated Spaces as scheduled\n- Hold Dedicated Spaces for 1 hour after Performance start time\n\n**Coordination Services:**\n- Work with CST to determine parking plans for each Performance\n- Facilitate and coordinate flow of CST patrons to designated parking areas\n- Coordinate taxi cab access and valet parking\n- Coordinate school bus and disabled patron drop-off and loading\n\n**Alternative Parking Obligation:**\n- If legally restricted or unable to provide parking for reasons beyond NPI's reasonable control, NPI must either:\n  a) Provide alternative parking with CST's reasonable approval, OR\n  b) Allow rent abatement (on the underlying theater leases) as mutually agreed",
+      "sections": ["Section 4", "Section 6 (Alternative Parking)", "Section 7 (Taxi Service)"],
+      "pages": ["Page 2-4"],
+      "exactLanguage": "\"In the event that NPI's obligation under this Parking Agreement is legally restricted or NPI is otherwise unable to do so for reasons beyond NPI's reasonable control, NPI at its option will a) provide alternative parking with CST's reasonable approval or b) allow rent abatement as mutually agreed by the Parties.\"",
+      "interpretationNotes": "Since CST does not lease physical premises under this agreement (only parking access rights), traditional repair and maintenance obligations do not apply. NPI's primary obligation is to provide access to parking spaces, not to maintain any specific premises leased to CST. The East and West Garages remain NPI's property, and NPI is responsible for maintaining them as parking facilities under general premises liability principles, but this is not specified in this agreement.",
+      "confidence": "High",
+      "confidenceReason": "The agreement clearly defines NPI's obligations, which are service-oriented rather than repair-oriented.",
+      "caveats": "Issues like snow removal, lighting, security, elevator maintenance in the garages, etc. are not addressed in this agreement. These would presumably be NPI's responsibility as the garage operator, but CST has no contractual leverage under this parking agreement to enforce such maintenance.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the Tenant's Responsibility to Repair?",
+      "answer": "**Not applicable - CST does not lease premises requiring repair**\n\n**CST's Obligations Under This Agreement:**\n\n**Reporting and Communication:**\n- Produce quarterly Parking Usage Reports\n- Provide 24-hour advance Parking Usage Confirmations\n- Communicate regularly about parking availability outside Yard Theater permitted periods\n- Provide 24-hour notice for production/rehearsal parking needs\n\n**Coordination:**\n- Cooperate to facilitate and coordinate patron flow to designated parking areas\n\n**Financial:**\n- Reimburse NPI within 30 days for discounts exceeding 30% in aggregate\n\n**No Physical Maintenance Obligations:**\n- CST has no responsibility to repair, maintain, or clean parking facilities\n- NPI retains ownership and operational control of all parking areas",
+      "sections": ["Section 4"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"CST shall produce a quarterly report (the 'Parking Usage Report')... At least twenty-four (24) hours prior to each specific Performance, CST will confirm, in writing, the number of parking spaces required... The Parties will cooperate to facilitate and coordinate the flow of CST's patrons to the designated parking areas.\"",
+      "interpretationNotes": "This is a parking access and discount agreement, not a lease of premises. CST's obligations are administrative (reporting) and cooperative (coordination) rather than physical (repair and maintenance). CST does not take possession of any parking spaces that would require maintenance or repair responsibilities.",
+      "confidence": "High",
+      "confidenceReason": "The agreement clearly defines CST's obligations, none of which involve physical premises repairs.",
+      "caveats": "If CST or its patrons cause damage to parking facilities (e.g., vehicle collision with garage structure), liability and repair responsibility would be determined by general tort law and insurance, not by this agreement, which is silent on damage liability.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    },
+    {
+      "question": "What Utilities are the Tenant Responsible For?",
+      "answer": "Not applicable - This is a parking access agreement, not a premises lease. CST has no utility responsibilities.",
+      "sections": ["N/A"],
+      "pages": ["N/A"],
+      "exactLanguage": "N/A - No utility provisions in this parking agreement",
+      "interpretationNotes": "Since CST does not lease physical premises under this agreement, there are no utility obligations. NPI, as the owner and operator of the parking garages, is responsible for all utilities (electricity, water, HVAC, etc.) serving the parking facilities.",
+      "confidence": "High",
+      "confidenceReason": "This is a parking rights agreement without premises possession or utility provisions.",
+      "caveats": "None - this question does not apply to parking access agreements.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    },
+    {
+      "question": "What Utilities are the Landlord Responsible For?",
+      "answer": "Not applicable - This parking agreement does not address utility responsibilities.\n\nAs the owner and operator of the parking facilities, NPI would be responsible for all utilities serving the East and West Garages (lighting, HVAC, elevators, payment systems, etc.), but this is not specified in this parking access agreement.",
+      "sections": ["N/A"],
+      "pages": ["N/A"],
+      "exactLanguage": "N/A - No utility provisions in this parking agreement",
+      "interpretationNotes": "While it is reasonable to assume NPI maintains all utilities for its parking garages as part of normal operations, this parking agreement does not create any contractual utility obligations.",
+      "confidence": "High",
+      "confidenceReason": "The agreement is silent on utilities, which is appropriate for a parking access agreement.",
+      "caveats": "None - utility responsibility is implicit in NPI's ownership and operation of the facilities but not contractually defined in this document.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the conditions for Tenant to be allowed to transfer or assign the Lease?",
+      "answer": "**Assignment/Transfer not addressed in this Parking Agreement**\n\nThe agreement is silent on assignment and transfer rights.\n\n**Implied Restrictions:**\n- The parking rights are specifically tied to CST's operations at the 1997 and 2016 Lease Premises\n- The definition of \"Performance\" limits use to CST or \"its licensee\"\n- This suggests limited transfer rights, likely requiring NPI consent\n\n**Related Provision:**\n- If the underlying 1997 or 2016 Lease Agreements are assigned, the parking rights would presumably transfer with them\n- However, this is not explicitly stated and could create ambiguity",
+      "sections": ["Section 2(l) (Definitions)", "Section 8 (Term)"],
+      "pages": ["Page 1-2", "Page 4"],
+      "exactLanguage": "\"'Performance' means live performances of Shakespearean plays and other theatrical performances, educational and outreach programs, lectures and other programming produced or presented by CST or its licensee...\" \"This Parking Agreement shall be in effect for a term co-extensive with the 1997 Lease Agreement and the 2016 Lease Agreement.\"",
+      "interpretationNotes": "The reference to 'CST or its licensee' in the Performance definition suggests that CST may license its theater operations to third parties without violating the parking agreement. However, a full assignment of CST's interest to a completely different entity is not addressed. Given the personal nature of the agreement (tied to CST's specific theatrical operations), assignment would likely require NPI's consent, though this should be explicitly stated.",
+      "confidence": "Medium",
+      "confidenceReason": "Assignment rights must be inferred from context and the nature of the agreement rather than explicit provisions.",
+      "caveats": "This is a significant gap in the agreement. CST should negotiate explicit assignment rights, especially if contemplating any organizational changes, mergers, or sale of theater operations. NPI should clarify whether assignment requires consent.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Inferred",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is an Event of Default defined as?",
+      "answer": "**No default provisions in this Parking Agreement**\n\nThe agreement does not define Events of Default or remedies for breach.\n\n**Potential Defaults (Implied from Obligations):**\n\n**CST Defaults:**\n- Failure to reimburse NPI for excess discounts within 30 days\n- Misuse of parking spaces for non-permitted purposes\n- Breach of obligations under the underlying 1997 or 2016 Lease Agreements (which could terminate those leases and, by extension, this parking agreement)\n\n**NPI Defaults:**\n- Failure to provide agreed-upon parking spaces\n- Failure to provide alternative parking or rent abatement if unable to fulfill parking obligations\n- Breach of obligations under the underlying theater leases",
+      "sections": ["N/A"],
+      "pages": ["N/A"],
+      "exactLanguage": "N/A - No default provisions in this parking agreement",
+      "interpretationNotes": "The absence of default and remedy provisions is a significant weakness in this agreement. Without defined defaults and remedies, the parties must rely on general contract law principles and would need to litigate or arbitrate any disputes. The only quasi-remedy mentioned is CST's right to terminate the underlying theater leases if NPI cannot provide parking for 12+ consecutive months (Section 6).",
+      "confidence": "High",
+      "confidenceReason": "The document can be definitively confirmed to lack default provisions.",
+      "caveats": "This gap should be addressed through an amendment defining material breaches, notice and cure periods, and available remedies. The current structure creates uncertainty and litigation risk.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": true
+    },
+    {
+      "question": "What are the remedies for Default for both Landlord and Tenant?",
+      "answer": "**No remedies explicitly stated in this Parking Agreement**\n\n**CST's Only Explicit Remedy:**\n- If NPI is unable to provide required parking for 12+ consecutive months, CST may terminate both the 1997 Lease Agreement and 2016 Lease Agreement upon 60 days advance notice\n- Termination of the theater leases would automatically terminate this parking agreement\n\n**Implied Remedies (Under General Contract Law):**\n- Specific performance (court order to comply with agreement)\n- Damages for breach of contract\n- Termination for material breach\n- Injunctive relief\n\n**No Specified Remedies For:**\n- Late payment of discount reimbursements\n- Failure to provide required reports\n- Failure to coordinate parking access\n- Damage to parking facilities",
+      "sections": ["Section 6 (Alternative Parking)"],
+      "pages": ["Page 3-4"],
+      "exactLanguage": "\"Should such restriction on NPI's ability to provide parking as required hereunder continue for a period of twelve (12) months, then CST may terminate the 1997 Lease Agreement, as provided in Section 11.1 thereof, and the 2016 Lease Agreement, as provided in Section 11.1 thereof, upon the giving of sixty (60) days advance notice to the other party.\"",
+      "interpretationNotes": "The only explicit remedy in the agreement is CST's nuclear option: terminating the theater leases if parking cannot be provided for a year. This is a drastic remedy that doesn't address minor breaches or disputes. The absence of graduated remedies (notice and cure, monetary damages, temporary suspension of obligations, etc.) creates an all-or-nothing scenario that may not serve either party's interests in a dispute.",
+      "confidence": "High",
+      "confidenceReason": "The single remedy provision is clearly stated, and the absence of other remedies can be definitively confirmed.",
+      "caveats": "This is a major weakness in the agreement. Without defined remedies for common issues (late payment, service failures, coordination problems), the parties face unnecessary legal uncertainty and costs. An amendment should add standard default and remedy provisions.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is the Base Rent per year and month?",
+      "answer": "**No Base Rent - Not Applicable**\n\nThis is a parking access and discount agreement, not a rental lease. There is no base rent payment structure.\n\n**Instead, CST receives:**\n- 15 parking spaces free of charge\n- 30% discount on parking fees for Performance and Production/Rehearsal parking\n- CST patrons pay discounted parking fees directly (not rent to NPI)\n\n**Only Payment Obligation:**\n- Reimbursement to NPI if aggregate discounts exceed 30% (calculated annually, due within 30 days of invoice)",
+      "sections": ["Section 4", "Section 5"],
+      "pages": ["Page 2-3"],
+      "exactLanguage": "\"CST shall have the right, without charge during the Term of this Parking Agreement and any extensions thereto, to fifteen (15) unreserved parking spaces... NPI shall make available at a discount from Navy Pier's then advertised rates of not less than thirty percent (30%)...\"",
+      "interpretationNotes": "This agreement provides a benefit (free and discounted parking) rather than imposing a rent obligation. The economic value to CST depends on usage levels and prevailing parking rates, making it variable rather than fixed like traditional base rent.",
+      "confidence": "High",
+      "confidenceReason": "The agreement clearly establishes no base rent obligation.",
+      "caveats": "While there's no rent, the value of the benefit can be quantified by calculating: (15 spaces × $0 × days used) + (discounted spaces × 30% × standard rate × days used). This could represent significant value depending on usage.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Common Area Maintenance per year and month?",
+      "answer": "Not applicable - This is a parking access agreement, not a premises lease. There are no CAM charges.",
+      "sections": ["N/A"],
+      "pages": ["N/A"],
+      "exactLanguage": "N/A - No CAM provisions in this parking agreement",
+      "interpretationNotes": "CST does not lease premises requiring common area maintenance. NPI maintains the parking garages as the owner and operator, with costs built into the parking fees charged to all users.",
+      "confidence": "High",
+      "confidenceReason": "CAM charges are not applicable to parking access agreements.",
+      "caveats": "None - this question does not apply to this type of agreement.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Marketing Fee per year and month?",
+      "answer": "Not applicable - This parking agreement does not include marketing fees.",
+      "sections": ["N/A"],
+      "pages": ["N/A"],
+      "exactLanguage": "N/A - No marketing fee provisions in this parking agreement",
+      "interpretationNotes": "Marketing fees are typically associated with retail or restaurant leases in shopping centers. This parking access agreement for a theater operation does not include such charges.",
+      "confidence": "High",
+      "confidenceReason": "The agreement does not contain marketing fee provisions.",
+      "caveats": "None - marketing fees are not relevant to this agreement type.",
+      "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+      "definitionType": "Not Found",
+      "reviewRequired": false
+    }
+  ],
+  "executiveSummary": {
+    "tenant": "Chicago Shakespeare Theater",
+    "documentId": "NAVY_PIER_PARKING_AGREEMENT_2016",
+    "summary": "This Parking Agreement, effective February 5, 2016, provides Chicago Shakespeare Theater (CST) with discounted and complimentary parking access at Navy Pier to support its theatrical operations. Unlike a traditional lease, this is a parking access rights agreement that runs co-extensively with CST's underlying 1997 and 2016 theater leases. CST receives 15 free parking spaces year-round, plus the right to utilize up to 350 discounted spaces for Main Stage/Studio Theater performances and up to 75 spaces for Yard Theater performances (with seasonal limitations). All discounted parking is provided at 30% off Navy Pier's standard rates. The agreement includes coordination provisions for CST's patron parking, production/rehearsal parking, and special services like taxi coordination and disabled patron access.\n\nThe structure is operationally focused, requiring CST to provide quarterly parking forecasts and 24-hour advance confirmations for each performance. NPI retains flexibility to reassign unused spaces to public use, balancing CST's needs with Navy Pier's general parking operations. Notably, the agreement lacks many standard contract provisions including default definitions, remedies for breach (except CST's nuclear option to terminate the theater leases if parking cannot be provided for 12+ months), assignment rights, and maintenance obligations. The agreement provides significant value to CST by reducing patron parking costs and ensuring parking availability, which is crucial for theater attendance, particularly during Navy Pier's busy summer season.",
+    "keyTerms": {
+      "commencement": "February 5, 2016 (Effective Date); operational provisions effective upon 2016 Lease Rent Commencement",
+      "expiration": "Co-extensive with 1997 and 2016 Lease Agreements; expires when either underlying theater lease expires or terminates",
+      "premisesSize": "Up to 417 parking spaces (15 included + 350 performance + 52 production/rehearsal) at peak capacity",
+      "baseRent": "No base rent; 30% discount on parking fees; 15 spaces provided free; potential reimbursement if aggregate discounts exceed 30%",
+      "renewalOptions": "Not explicitly stated; would follow renewal of underlying 1997 and 2016 theater leases"
+    },
+    "criticalDates": [
+      {
+        "date": "2016-02-05",
+        "description": "Effective Date of Parking Agreement"
+      },
+      {
+        "date": "October 1 - March 31 (annually)",
+        "description": "Yard Theater Permitted Performance Discount Parking Period (75 spaces available, excluding December weekends and Christmas through Winter WonderFest)"
+      },
+      {
+        "date": "August 15 - June 15 (annually)",
+        "description": "Period for up to 52 production/rehearsal parking spaces"
+      },
+      {
+        "date": "June 16 - August 14 (annually)",
+        "description": "Period for reduced production/rehearsal parking (17 spaces only)"
+      },
+      {
+        "date": "Beginning of each season",
+        "description": "Deadline for submitting Parking Usage Reports (if not submitted sooner when schedule becomes available)"
+      },
+      {
+        "date": "24 hours before each Performance",
+        "description": "Deadline for Parking Usage Confirmation"
+      },
+      {
+        "date": "Within 30 days of invoice",
+        "description": "CST must reimburse NPI for excess discounts (if any)"
+      },
+      {
+        "date": "After 12 consecutive months of inability to provide parking",
+        "description": "CST may exercise termination right for underlying theater leases (60 days advance notice required)"
+      }
+    ],
+    "majorObligations": {
+      "landlord": [
+        "Provide 15 unreserved parking spaces at no charge (minimum 5 in Parking Garages)",
+        "Make available up to 350 spaces for Main Stage/Studio performances at 30% discount",
+        "Make available up to 75 spaces for Yard Theater performances at 30% discount (October-March, with blackouts)",
+        "Provide production/rehearsal parking: 52 spaces (Aug 15-Jun 15) or 17 spaces (Jun 16-Aug 14) at 30% discount",
+        "Coordinate parking plans for each Performance with CST",
+        "Facilitate and coordinate patron flow to designated parking areas",
+        "Hold Dedicated Spaces for 1 hour after Performance begins before reassigning",
+        "Coordinate taxi cab access and valet parking at Performance dates",
+        "Coordinate school bus and disabled patron drop-off and loading",
+        "If unable to provide parking, offer alternative parking (with CST approval) or rent abatement on theater leases",
+        "Calculate annual aggregate discount usage and invoice CST for excess (if any)"
+      ],
+      "tenant": [
+        "Produce quarterly Parking Usage Reports with Performance schedules",
+        "Submit Parking Usage Reports as soon as available, no later than beginning of season",
+        "Provide written Parking Usage Confirmation at least 24 hours before each Performance",
+        "Provide 24-hour advance notice for production/rehearsal parking needs",
+        "Reimburse NPI within 30 days for aggregate discounts exceeding 30% (if applicable)",
+        "Cooperate to facilitate and coordinate patron flow to designated parking areas",
+        "Communicate regularly with NPI about Yard Theater parking outside permitted period",
+        "Limit tiered discounts to 30% in aggregate",
+        "Comply with all applicable laws and ordinances for Performances"
+      ]
+    },
+    "risks": [
+      "No explicit default or remedy provisions except CST's right to terminate theater leases after 12 months of parking unavailability - creates legal uncertainty for addressing breaches",
+      "Yard Theater parking limited to October-March with December blackouts and Winter WonderFest exclusion - significantly restricts parking during CST's peak visitor season",
+      "Production/rehearsal parking reduced from 52 to 17 spaces during summer high season (June 16-Aug 14) when theater operations are busiest",
+      "No assignment or sublease provisions - unclear if CST can transfer rights or what happens if CST's operations change",
+      "Parking spaces are not reserved or guaranteed - subject to availability and NPI's operational needs",
+      "Standard parking rates set unilaterally by NPI - even with 30% discount, costs could increase significantly if NPI raises rates",
+      "CST has limited control over parking location - NPI designates specific spaces and can change locations",
+      "No explicit force majeure provision - unclear what happens if parking facilities are damaged or unavailable due to circumstances beyond NPI's control",
+      "Automatic termination if either underlying theater lease expires - creates risk if one theater closes but the other continues",
+      "No specified insurance requirements or liability provisions - unclear who bears risk for patron injuries, vehicle damage, etc. in parking areas",
+      "24-hour notice requirements may be difficult to meet for last-minute performances or schedule changes"
+    ],
+    "opportunities": [
+      "Significant cost savings: 15 free parking spaces plus 30% discount on up to 402 additional spaces",
+      "Dedicated entrance and coordinated patron flow enhance customer experience and differentiate CST from other Navy Pier venues",
+      "Flexibility to utilize any available Performance Discount Parking across all three theaters (Main Stage, Studio, Yard)",
+      "Opportunity to use Yard Theater discount parking outside permitted period when Navy Pier is not at capacity (subject to NPI agreement)",
+      "Taxi and valet coordination services improve accessibility and patron convenience",
+      "School bus and disabled patron drop-off coordination supports educational programming and accessibility",
+      "Unused Dedicated Spaces can be reassigned by NPI, removing pressure on CST to over-reserve",
+      "Agreement runs co-extensive with theater leases, providing long-term parking certainty",
+      "No base rent or CAM charges - only pay for excess discounts if tiered pricing exceeds 30% aggregate",
+      "Right to terminate theater leases if parking unavailable for 12+ months provides leverage for CST",
+      "Quarterly reporting provides flexibility for CST to adjust parking needs seasonally"
+    ]
+  }
+}

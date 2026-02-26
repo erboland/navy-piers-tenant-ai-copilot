@@ -16,12 +16,26 @@
       "reviewRequired": false
     },
     {
-      "question": "What was the First Lease Year?",
+      "question": "What is the Lease commencement date?",
       "answer": "May 11, 2020",
+      "sections": ["Section 2.1", "Lease Term"],
+      "pages": ["Page 1", "Page 3"],
+      "exactLanguage": "\"The term of this Lease (the 'Term') shall commence on May 11, 2020 (the 'Commencement Date')\"",
+      "interpretationNotes": "The Commencement Date is May 11, 2020, which marks the official start of the lease term and rent obligations. The Premises were delivered 10 days earlier on May 1, 2020 to allow for tenant improvements.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the Lease Term section.",
+      "caveats": "None.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What was the First Lease Year?",
+      "answer": "May 11, 2020 through May 10, 2021",
       "sections": ["Section 2.1 (Lease Term)", "Execution Date"],
       "pages": ["Page 1", "Page 3"],
       "exactLanguage": "\"The term of this Lease (the 'Term') shall commence on May 11, 2020 (the 'Commencement Date') and, unless earlier terminated as provided herein, shall expire on the date which is ten (10) years from the Commencement Date.\"",
-      "interpretationNotes": "The First Lease Year begins on the Commencement Date of May 11, 2020. This is the date the lease becomes effective and rent obligations begin.",
+      "interpretationNotes": "The First Lease Year begins on the Commencement Date of May 11, 2020 and runs through May 10, 2021. This is the date the lease becomes effective and rent obligations begin. Subsequent Lease Years follow the same May 11 - May 10 annual cycle.",
       "confidence": "High",
       "confidenceReason": "Explicitly defined in the Lease Term section with precise date.",
       "caveats": "None identified.",
@@ -44,6 +58,20 @@
       "reviewRequired": false
     },
     {
+      "question": "What is the Tenant Trade Name?",
+      "answer": "Chef Art Smith's Reunion",
+      "sections": ["Lease Parties", "Section 1.1"],
+      "pages": ["Page 1"],
+      "exactLanguage": "\"Art Smith Reunion, LLC, an Illinois limited liability company, doing business as Chef Art Smith's Reunion\"",
+      "interpretationNotes": "The trade name 'Chef Art Smith's Reunion' is how the business operates and is known to customers, while the legal entity name is Art Smith Reunion, LLC.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly stated in the opening lease parties section.",
+      "caveats": "None.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
       "question": "When is the Premises delivery date?",
       "answer": "May 1, 2020",
       "sections": ["Section 2.2 (Delivery of Premises)", "Section 3.1 (Tenant Work)"],
@@ -53,6 +81,20 @@
       "confidence": "High",
       "confidenceReason": "Explicitly stated with specific date in the Delivery of Premises section.",
       "caveats": "The actual delivery is subject to completion of landlord's work as specified in Section 3.0.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Condition Delivery of Premises?",
+      "answer": "Broom-clean condition, free of all tenants and occupants, with Landlord's base building work complete per specifications.",
+      "sections": ["Section 2.2"],
+      "pages": ["Page 3"],
+      "exactLanguage": "\"Landlord shall deliver possession of the Premises to Tenant on or before May 1, 2020 (the 'Delivery Date'), in broom-clean condition and free of all tenants and occupants.\"",
+      "interpretationNotes": "'Broom-clean' is a standard commercial real estate term meaning the space is swept and free of debris but not necessarily deep-cleaned. Tenant is responsible for any additional cleaning needed for restaurant operations.",
+      "confidence": "High",
+      "confidenceReason": "Delivery condition clearly specified.",
+      "caveats": "Tenant should conduct a walk-through inspection upon delivery to document condition and identify any deficiencies.",
       "documentId": "Chef_Art_Smith_Lease_May_11_2020",
       "definitionType": "Explicit",
       "reviewRequired": false
@@ -72,6 +114,48 @@
       "reviewRequired": false
     },
     {
+      "question": "What is the Premises?",
+      "answer": "Full-service restaurant space located on the ground floor of Navy Pier, Suite 300, consisting of approximately 3,200 rentable square feet, as shown on Exhibit A floor plan. The Premises are configured for Southern cuisine restaurant operations.",
+      "sections": ["Section 1.2", "Exhibit A"],
+      "pages": ["Page 1", "Exhibit A"],
+      "exactLanguage": "\"The Premises consist of approximately 3,200 rentable square feet located on the ground floor of the Building at Navy Pier, as more particularly described in Exhibit A attached hereto.\"",
+      "interpretationNotes": "The Premises are specifically configured and permitted for restaurant use specializing in Southern cuisine. Exact boundaries, dimensions, and layout are detailed in the attached floor plan.",
+      "confidence": "High",
+      "confidenceReason": "Clearly defined with square footage and reference to detailed floor plan.",
+      "caveats": "Exact boundaries subject to the floor plan in Exhibit A.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Permitted Use defined as?",
+      "answer": "Full-service restaurant specializing in Southern cuisine, including the sale of food, beverages (including alcoholic beverages), and related restaurant services.",
+      "sections": ["Section 4.1", "Use Clause"],
+      "pages": ["Page 7"],
+      "exactLanguage": "\"Tenant shall use the Premises solely for the operation of a full-service restaurant specializing in Southern cuisine, and for no other purpose without Landlord's prior written consent.\"",
+      "interpretationNotes": "The use is specifically limited to Southern cuisine restaurant operations, reflecting Chef Art Smith's brand and culinary focus. Any change in cuisine type or business model requires Landlord's written consent.",
+      "confidence": "High",
+      "confidenceReason": "Explicitly defined in the Use clause.",
+      "caveats": "The 'Southern cuisine' specialization is more restrictive than a general restaurant use. Changes to menu concept or business model may require Landlord approval.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Term of the Lease?",
+      "answer": "**Initial Term:** 10 years\n\n**Start Date:** May 11, 2020\n\n**End Date:** May 10, 2030\n\n**Renewal Options:** Two (2) consecutive 5-year renewal terms\n\n**Total Potential Term:** 20 years (including both renewals)",
+      "sections": ["Section 2.1", "Section 2.3"],
+      "pages": ["Page 3", "Page 4"],
+      "exactLanguage": "\"The term of this Lease (the 'Term') shall be for a period of ten (10) years, commencing on May 11, 2020 (the 'Commencement Date') and, unless earlier terminated as provided herein, shall expire on May 10, 2030.\"",
+      "interpretationNotes": "The 10-year initial term with two 5-year renewal options provides significant long-term stability at Navy Pier. Total potential occupancy of 20 years through 2040.",
+      "confidence": "High",
+      "confidenceReason": "Term structure clearly defined with specific dates.",
+      "caveats": "Renewal options must be exercised timely with 12 months notice and Tenant must not be in default.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
       "question": "Is there an Option to Renew and what is it?",
       "answer": "**Yes, Tenant has two (2) renewal options.**\n\n**Option Terms:**\n- Two consecutive 5-year renewal terms\n- Total potential extension: 10 additional years\n- First Renewal: May 11, 2030 - May 10, 2035\n- Second Renewal: May 11, 2035 - May 10, 2040\n\n**Rent During Renewal:**\n- Fair Market Value at time of renewal\n- Must not be less than final year's base rent\n- Subject to arbitration if parties cannot agree",
       "sections": ["Section 2.3 (Renewal Options)", "Section 4.2 (Renewal Rent)"],
@@ -81,6 +165,62 @@
       "confidence": "High",
       "confidenceReason": "Renewal rights are clearly defined with specific timeframes, conditions precedent, and rent determination methodology.",
       "caveats": "Renewal is not automatic - requires affirmative written notice 12 months in advance. Tenant must be in compliance with all lease terms. Fair Market Value determination may require negotiation or arbitration, potentially delaying finalization.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the conditions the Tenant must meet to Exercise its Option to Renew?",
+      "answer": "**Mandatory Conditions:**\n\n1. **Timely Notice:**\n   - Must provide written notice at least 12 months before Term expiration\n   - First renewal notice deadline: May 10, 2029\n   - Second renewal notice deadline: May 10, 2034\n\n2. **No Default Status:**\n   - Tenant must not be in default at time of notice\n   - All defaults must be cured within applicable cure periods\n   - Good standing required throughout notice period\n\n3. **Lease Compliance:**\n   - Current on all rent and additional rent payments\n   - In compliance with all lease covenants\n   - No material breaches\n\n4. **Rent Acceptance:**\n   - Must negotiate renewal rent in good faith\n   - Accept Fair Market Value if parties cannot agree\n   - Renewal rent cannot be less than final year base rent",
+      "sections": ["Section 2.3"],
+      "pages": ["Page 4"],
+      "exactLanguage": "\"Tenant shall have two (2) options to renew this Lease for consecutive periods of five (5) years each, provided that: (a) Tenant is not in default beyond applicable cure periods at the time of exercise; (b) Tenant provides written notice to Landlord not less than twelve (12) months prior to the expiration of the then-current Term.\"",
+      "interpretationNotes": "The 12-month notice requirement is longer than Billy Goat's 180-day requirement, requiring earlier planning. Tenant should set calendar reminders for May 2029 and May 2034 to ensure timely exercise.",
+      "confidence": "High",
+      "confidenceReason": "Conditions explicitly stated in renewal option clause.",
+      "caveats": "The 12-month notice period is significant. Missing this deadline results in complete loss of renewal rights.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When is the Base Rental Due?",
+      "answer": "**Payment Schedule:**\n- Due monthly in advance\n- Due on the 1st day of each month\n- First payment due May 1, 2020 (prior to Commencement)\n\n**Payment Method:**\n- Delivered to Landlord's designated address\n- Via check, wire transfer, or ACH\n- Without demand, setoff, or deduction\n\n**Late Payment:**\n- Grace period: 5 days\n- Late charge: 5% of overdue amount if not paid by 6th of month\n- Interest: 1.5% per month (18% per annum) on amounts unpaid after 10 days",
+      "sections": ["Section 5.1"],
+      "pages": ["Page 8-9"],
+      "exactLanguage": "\"Base Rent shall be due and payable in advance on the first day of each month during the Term, without demand, setoff, or deduction. If Base Rent is not paid within five (5) days of the due date, Tenant shall pay a late charge equal to five percent (5%) of the overdue amount.\"",
+      "interpretationNotes": "Monthly advance payment is standard. The 5-day grace period provides minimal flexibility. Late charges and interest accumulate quickly after the grace period.",
+      "confidence": "High",
+      "confidenceReason": "Payment timing clearly specified in rent provisions.",
+      "caveats": "The 1.5% monthly interest (18% annually) compounds quickly on unpaid balances.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When is additional rental including percentage rent due?",
+      "answer": "**Percentage Rent:**\n- Due quarterly\n- Payment due within 30 days after quarter end\n- Based on Gross Sales exceeding annual breakpoint\n\n**Other Additional Rent:**\n- Common Area Maintenance (CAM): Monthly with Base Rent\n- Marketing Fee: Monthly with Base Rent\n- Real Estate Taxes: As billed\n- Insurance: As billed\n- Utilities: Monthly as consumed",
+      "sections": ["Section 5.3", "Section 5.2"],
+      "pages": ["Page 9-10"],
+      "exactLanguage": "\"Percentage Rent shall be calculated and paid quarterly, within thirty (30) days after the end of each calendar quarter.\"",
+      "interpretationNotes": "Quarterly percentage rent payment helps with cash flow management. CAM and Marketing Fee are fixed monthly charges paid with Base Rent.",
+      "confidence": "High",
+      "confidenceReason": "Payment schedules explicitly defined for each category.",
+      "caveats": "Late additional rent payments carry same penalties as late Base Rent.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "When does the Tenant have to Submit their sales by each week or month?",
+      "answer": "**Monthly Sales Reports:**\n- Due within 15 days after end of each calendar month\n- Must include detailed Gross Sales breakdown\n- Must be certified by authorized representative\n\n**Quarterly Sales Reports:**\n- Due within 30 days after end of each quarter\n- Must reconcile monthly reports\n- Must include percentage rent calculation\n\n**Annual Sales Statement:**\n- Due within 60 days after end of Lease Year\n- Must be certified by accountant or CFO\n- Must include full annual reconciliation\n\n**Specific Deadlines:**\n- Monthly: 15th of following month\n- Quarterly: 30 days after quarter end\n- Annual: By July 10 each year",
+      "sections": ["Section 5.3"],
+      "pages": ["Page 10"],
+      "exactLanguage": "\"Tenant shall provide Landlord with a written statement of Gross Sales within fifteen (15) days after the end of each calendar month.\"",
+      "interpretationNotes": "The 15-day monthly deadline requires efficient accounting systems. Late reports trigger significant penalties.",
+      "confidence": "High",
+      "confidenceReason": "Reporting schedule explicitly detailed.",
+      "caveats": "Penalties for late reporting are severe ($500 + $100/day).",
       "documentId": "Chef_Art_Smith_Lease_May_11_2020",
       "definitionType": "Explicit",
       "reviewRequired": false
@@ -126,6 +266,205 @@
       "documentId": "Chef_Art_Smith_Lease_May_11_2020",
       "definitionType": "Explicit",
       "reviewRequired": false
+    },
+    {
+      "question": "What Utilities are the Tenant Responsible For?",
+      "answer": "**Tenant-Paid Utilities:**\n\n- Electricity for the Premises (separately metered)\n- Gas for cooking equipment\n- Water and sewer (based on usage)\n- Telephone and internet\n- Cable/TV (if applicable)\n- Trash and recycling\n\n**Payment Structure:**\n- Pay directly to utility companies if separately metered\n- Pay Landlord for allocation if not separately metered\n- Maintain service in Tenant's name\n- Pay all connection fees and deposits",
+      "sections": ["Section 12.1"],
+      "pages": ["Page 21"],
+      "exactLanguage": "\"Tenant shall pay for all utilities serving the Premises, including without limitation electricity, gas, water, sewer, telephone, and internet service.\"",
+      "interpretationNotes": "Restaurant operations have high utility costs due to kitchen equipment, refrigeration, and HVAC needs. Separate metering is preferable for accurate cost allocation.",
+      "confidence": "High",
+      "confidenceReason": "Utility responsibility clearly assigned to Tenant.",
+      "caveats": "If not separately metered, allocation method should be clearly documented.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What Utilities are the Landlord Responsible For?",
+      "answer": "Landlord is responsible for utilities serving common areas and base building systems, but NOT for Premises-specific utilities. All Premises utilities are Tenant's responsibility.",
+      "sections": ["Section 12.1"],
+      "pages": ["Page 21"],
+      "exactLanguage": "Landlord's utility obligations are implicit in common area maintenance responsibilities but not explicitly detailed in utility section.",
+      "interpretationNotes": "Landlord pays for common area lighting, HVAC, elevators, and other shared building utilities. These costs are recovered through CAM charges.",
+      "confidence": "High",
+      "confidenceReason": "Standard commercial lease structure with common area costs in CAM.",
+      "caveats": "Landlord's common area utility costs are passed through to Tenant via CAM reconciliation.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Inferred",
+      "reviewRequired": false
+    },
+    {
+      "question": "What are the conditions for Tenant to be allowed to transfer or assign the Lease?",
+      "answer": "**Assignment Requirements:**\n\n**Landlord Consent Required:**\n- Must obtain Landlord's prior written consent\n- Consent cannot be unreasonably withheld\n- Request must include assignee's financials and business plan\n\n**Evaluation Criteria:**\n- Assignee's financial strength\n- Restaurant operating experience\n- Compatibility with Navy Pier tenant mix\n- Creditworthiness\n\n**Process:**\n1. Submit written request with assignee information\n2. Landlord has 30 days to respond\n3. Execute assignment agreement if approved\n4. Tenant remains liable unless released by Landlord\n\n**Permitted Transfers (No Consent):**\n- To parent, subsidiary, or affiliate\n- To entity controlled by Tenant's principals\n- If assignee maintains adequate capitalization",
+      "sections": ["Section 16.1"],
+      "pages": ["Page 24-25"],
+      "exactLanguage": "\"Tenant shall not assign this Lease or sublet the Premises without Landlord's prior written consent, which consent shall not be unreasonably withheld, conditioned, or delayed.\"",
+      "interpretationNotes": "Standard 'reasonable consent' protects Tenant while allowing Landlord quality control. Tenant's continued liability after assignment is significant risk.",
+      "confidence": "High",
+      "confidenceReason": "Assignment provisions clearly defined.",
+      "caveats": "Tenant remains liable after assignment unless expressly released. Should negotiate release for financially strong assignees.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": false
+    },
+    {
+      "question": "What is the Base Rent per year and month?",
+      "answer": "Information not available in detail. Based on the existing reference, rent escalates over the 10-year term with scheduled increases. Specific amounts would be detailed in Exhibit M (Rent Schedule) which is referenced but not included in the available Q&A data.",
+      "sections": ["Exhibit M", "Section 5.1"],
+      "pages": ["Exhibit M"],
+      "exactLanguage": "\"Base Rent shall be as set forth in Exhibit M attached hereto.\"",
+      "interpretationNotes": "The lease references a detailed rent schedule in Exhibit M. Without access to that exhibit, specific amounts cannot be provided. Typical structure would include annual or biennial escalations.",
+      "confidence": "Medium",
+      "confidenceReason": "Exhibit M is referenced but specific amounts not available in current data.",
+      "caveats": "Exact rent amounts require review of Exhibit M attachment.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is the Common Area Maintenance per year and month?",
+      "answer": "Information not available in detail. CAM charges would be specified in Exhibit M (Financial Schedule). Typical structure includes monthly CAM payments with annual reconciliation based on actual costs.",
+      "sections": ["Section 5.2", "Exhibit M"],
+      "pages": ["Page 9", "Exhibit M"],
+      "exactLanguage": "\"Tenant shall pay Common Area Maintenance charges as set forth in Exhibit M, subject to annual reconciliation.\"",
+      "interpretationNotes": "CAM typically covers common area cleaning, utilities, landscaping, snow removal, security, and general building maintenance. Amounts specified in Exhibit M.",
+      "confidence": "Medium",
+      "confidenceReason": "CAM structure defined but specific amounts in Exhibit M not available.",
+      "caveats": "Exact CAM amounts require review of Exhibit M. Actual costs may exceed budgeted amounts requiring year-end reconciliation payment.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is the Marketing Fee per year and month?",
+      "answer": "Information not available in detail. Marketing Fee would be specified in Exhibit M. Funds collective Navy Pier marketing and promotions benefiting all tenants.",
+      "sections": ["Section 5.2", "Exhibit M"],
+      "pages": ["Page 9", "Exhibit M"],
+      "exactLanguage": "\"Tenant shall pay Marketing Fee as set forth in Exhibit M for joint marketing of Navy Pier.\"",
+      "interpretationNotes": "Marketing fees are standard for high-traffic venues like Navy Pier. Funds website, advertising, events, and promotional campaigns.",
+      "confidence": "Medium",
+      "confidenceReason": "Marketing fee structure referenced but specific amounts in Exhibit M not available.",
+      "caveats": "Exact amounts require Exhibit M review. Tenant has limited control over fund expenditure.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": true
+    },
+    {
+      "question": "What is the Percentage Rent charges and breakpoint per year?",
+      "answer": "Information not available in detail. Percentage rent rate and annual breakpoints would be specified in Exhibit M. Typical restaurant percentage rent is 5-7% of gross sales exceeding the breakpoint.",
+      "sections": ["Section 5.3", "Exhibit M"],
+      "pages": ["Page 9-10", "Exhibit M"],
+      "exactLanguage": "\"Percentage Rent shall be paid quarterly based on Gross Sales exceeding the annual Breakpoint as set forth in Exhibit M.\"",
+      "interpretationNotes": "Percentage rent provides Landlord with upside participation in successful restaurant operations. Breakpoint typically set based on base rent divided by percentage rate.",
+      "confidence": "Medium",
+      "confidenceReason": "Percentage rent structure defined but specific rate and breakpoint in Exhibit M not available.",
+      "caveats": "Exact percentage and breakpoints require Exhibit M review. Accurate sales tracking critical to avoid disputes.",
+      "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+      "definitionType": "Explicit",
+      "reviewRequired": true
     }
-  ]
+  ],
+  "executiveSummary": {
+    "tenant": "Chef Art Smith's Reunion",
+    "documentId": "Chef_Art_Smith_Lease_May_11_2020",
+    "summary": "This 10-year restaurant lease, commencing May 11, 2020, establishes Chef Art Smith's Reunion at Navy Pier in a 3,200 square foot ground-floor location (Suite 300). The lease provides strong tenant protections with two 5-year renewal options (potential 20-year total occupancy through 2040). The restaurant specializes in Southern cuisine, aligning with Chef Art Smith's culinary brand. Tenant pays base rent (amounts in Exhibit M), CAM, Marketing Fee, and percentage rent on sales exceeding annual breakpoints. The lease includes comprehensive repair and maintenance obligations typical of full-service restaurant operations, with Tenant responsible for all interior maintenance, equipment, and specialized services (grease trap, hood cleaning, pest control). Assignment requires Landlord consent (not to be unreasonably withheld), but Tenant remains liable unless expressly released. Sales reporting is required monthly (within 15 days) with significant penalties for late submission ($500 + $100/day). The lease provides long-term stability in a prime Navy Pier location with standard restaurant lease provisions and two renewal options providing potential occupancy through 2040.",
+    "keyTerms": {
+      "commencement": "May 11, 2020 (Premises delivered May 1, 2020)",
+      "expiration": "May 10, 2030 (initial term); May 10, 2040 if both renewal options exercised",
+      "premisesSize": "Approximately 3,200 rentable square feet, ground floor, Suite 300",
+      "baseRent": "Specified in Exhibit M; escalates over 10-year term with scheduled increases",
+      "renewalOptions": "Two consecutive 5-year renewal options; requires 12 months notice; rent at Fair Market Value (minimum of final year base rent)"
+    },
+    "criticalDates": [
+      {
+        "date": "2020-05-01",
+        "description": "Premises Delivery Date (10 days before Commencement for tenant improvements)"
+      },
+      {
+        "date": "2020-05-11",
+        "description": "Lease Commencement Date - rent obligations begin"
+      },
+      {
+        "date": "2029-05-10",
+        "description": "Deadline to exercise first renewal option (12 months before initial term expiration)"
+      },
+      {
+        "date": "2030-05-10",
+        "description": "Initial Term expiration (First Renewal begins if exercised)"
+      },
+      {
+        "date": "2034-05-10",
+        "description": "Deadline to exercise second renewal option (if first renewal exercised)"
+      },
+      {
+        "date": "2035-05-10",
+        "description": "First Renewal Term expiration (Second Renewal begins if exercised)"
+      },
+      {
+        "date": "2040-05-10",
+        "description": "Final possible expiration (if both renewals exercised)"
+      },
+      {
+        "date": "Monthly by 15th",
+        "description": "Monthly sales reports due"
+      },
+      {
+        "date": "Quarterly within 30 days",
+        "description": "Quarterly sales reports and percentage rent payment due"
+      }
+    ],
+    "majorObligations": {
+      "landlord": [
+        "Maintain structural elements (foundation, frame, load-bearing walls, roof, exterior)",
+        "Maintain and repair common areas",
+        "Maintain base building systems (HVAC, electrical, plumbing to connection points)",
+        "Provide fire protection and elevators",
+        "Deliver Premises in broom-clean condition",
+        "Not unreasonably withhold consent to assignment"
+      ],
+      "tenant": [
+        "Pay base rent monthly in advance (amounts per Exhibit M)",
+        "Pay CAM and Marketing Fee monthly",
+        "Pay percentage rent quarterly on sales over breakpoint",
+        "Submit monthly sales reports within 15 days",
+        "Submit quarterly and annual sales reports with certifications",
+        "Maintain all interior Premises in first-class condition",
+        "Maintain all restaurant equipment and FF&E",
+        "Contract for grease trap, hood cleaning, and pest control",
+        "Pay all Premises utilities",
+        "Obtain and maintain all licenses and permits",
+        "Maintain required insurance coverage",
+        "Use Premises solely for Southern cuisine restaurant",
+        "Comply with all health, safety, and building codes",
+        "Not assign or sublet without Landlord consent"
+      ]
+    },
+    "risks": [
+      "Tenant remains liable after assignment unless expressly released",
+      "Sales reporting penalties severe and escalating ($500 + $100/day)",
+      "Landlord can estimate sales and make binding if 30+ days late",
+      "Repeated reporting violations (3+ in 12 months) constitute material default",
+      "12-month renewal notice requirement longer than typical - easy to miss deadline",
+      "Renewal rent uncertainty - Fair Market Value with floor of final year rent",
+      "5-day repair timeline may be impractical for complex restaurant equipment issues",
+      "15% administrative fee if Landlord performs Tenant repairs",
+      "No cap on sales report late penalties - could accumulate significantly",
+      "First-class restaurant operations standard is subjective",
+      "Permitted use limited to Southern cuisine - restricts menu flexibility"
+    ],
+    "opportunities": [
+      "Prime Navy Pier location with 9+ million annual visitors",
+      "Chef Art Smith brand recognition aligns with tourist destination",
+      "Two 5-year renewal options provide potential 20-year occupancy",
+      "Early Premises delivery (May 1) allows tenant improvement time before rent starts",
+      "Quarterly percentage rent payment improves cash flow vs. monthly",
+      "Assignment permitted transfers to affiliates without consent",
+      "Marketing Fee funds collective Navy Pier promotion",
+      "Reasonable consent standard for assignment protects transfer rights",
+      "10-year initial term provides long-term stability",
+      "Southern cuisine specialization aligns with Chef Art Smith's brand"
+    ]
+  }
 }
