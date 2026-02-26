@@ -12,7 +12,8 @@ import { VendorSelector } from "../components/vendor-selector";
 import { LoadingState } from "../components/loading-state";
 import { ScrollArea } from "../components/ui/scroll-area";
 import { mockVendors } from "../lib/mock-data";
-import { generateEnhancedCustomResponse } from "../lib/enhanced-mock-responses";
+import { apiClient, ApiError } from "../services/api-client";
+import { toApiVendorId } from "../utils/vendor-mapping";
 
 export function ChatScreen() {
   const [selectedVendor, setSelectedVendor] = React.useState("");
@@ -52,7 +53,7 @@ export function ChatScreen() {
     }
   };
 
-  const handleSendMessage = (content: string) => {
+  const handleSendMessage = async (content: string) => {
     if (!selectedVendor) return;
     if (!activeSessionId) createNewChat();
 
@@ -89,12 +90,24 @@ export function ChatScreen() {
       setActiveSessionId(currentSessionId);
     }
 
-    // Simulate AI response
-    setTimeout(() => {
-      const aiResponse = generateEnhancedCustomResponse(content, vendor.name);
+    // Call API service (uses mock or real backend based on config)
+    try {
+      const apiVendorId = toApiVendorId(selectedVendor);
+      const aiResponse = await apiClient.sendSimpleMessage(content, apiVendorId);
       setMessages((prev) => [...prev, aiResponse]);
+    } catch (error) {
+      // Handle API errors gracefully
+      const errorMessage: EnhancedMessage = {
+        role: "assistant",
+        content: error instanceof ApiError
+          ? `Sorry, I encountered an error: ${error.message}. Please try again.`
+          : "Sorry, an unexpected error occurred. Please try again.",
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+      console.error('[Chat] API error:', error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const showWelcomeState = !activeSessionId && messages.length === 0;
