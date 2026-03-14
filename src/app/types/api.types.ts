@@ -152,3 +152,84 @@ export interface ApiConfig {
   /** Enable request/response logging */
   debug?: boolean;
 }
+
+/**
+ * ============================================================================
+ * Conversation Management Types
+ * ============================================================================
+ */
+
+/**
+ * API Request: Create a new conversation
+ * POST /api/v1/conversations
+ */
+export interface CreateConversationRequest {
+  /** Vendor identifier for this conversation */
+  vendorId: string;
+
+  /** Optional conversation title (generated from first message if not provided) */
+  title?: string;
+}
+
+/**
+ * Conversation metadata
+ */
+export interface Conversation {
+  /** Unique conversation identifier */
+  id: number;
+
+  /** Associated vendor ID */
+  vendorId: string;
+
+  /** User who owns this conversation */
+  userId: string;
+
+  /** Conversation title */
+  title: string;
+
+  /** When conversation was created */
+  createdAt: string;
+
+  /** When conversation was last updated */
+  updatedAt: string;
+
+  /** Preview of last message */
+  lastMessagePreview: string | null;
+
+  /** Total number of messages */
+  messageCount: number;
+}
+
+/**
+ * API Response: Create conversation
+ */
+export interface ConversationResponse {
+  success: true;
+  data: Conversation;
+}
+
+/**
+ * Chat message in a conversation
+ */
+export interface ChatMessage {
+  id: number;
+  conversationId: number;
+  role: 'user' | 'assistant';
+  content: string;
+  citations?: string[] | null;
+  structuredData?: Record<string, any> | null;
+  createdAt: string;
+}
+
+/**
+ * API Response: Send message in conversation
+ * POST /api/v1/conversations/{id}/messages
+ */
+export interface SendMessageResponse {
+  success: true;
+  data: {
+    conversationId: number;
+    userMessage: ChatMessage;
+    assistantMessage: ChatMessage;
+  };
+}

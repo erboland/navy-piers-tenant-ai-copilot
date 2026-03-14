@@ -1,26 +1,21 @@
 import * as React from "react";
+import { Plus } from "lucide-react";
 import { ChatInput } from "../components/chat-input";
 import {
   EnhancedChatMessage,
   type EnhancedMessage,
 } from "../components/enhanced-chat-message";
-import {
-  ChatHistorySidebar,
-  type ChatSession,
-} from "../components/chat-history-sidebar";
+import { ChatWelcome } from "../components/chat-welcome";
 import { VendorSelector } from "../components/vendor-selector";
 import { LoadingState } from "../components/loading-state";
 import { ScrollArea } from "../components/ui/scroll-area";
-import { mockVendors } from "../lib/mock-data";
+import { Button } from "../components/ui/button";
 import { apiClient, ApiError } from "../services/api-client";
 import { toApiVendorId } from "../utils/vendor-mapping";
 
 export function ChatScreen() {
   const [selectedVendor, setSelectedVendor] = React.useState("");
-  const [sessions, setSessions] = React.useState<ChatSession[]>([]);
-  const [activeSessionId, setActiveSessionId] = React.useState<string | null>(
-    null,
-  );
+  const [conversationId, setConversationId] = React.useState<number | null>(null);
   const [messages, setMessages] = React.useState<EnhancedMessage[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const messagesEndRef = React.useRef<HTMLDivElement>(null);
@@ -33,203 +28,190 @@ export function ChatScreen() {
     scrollToBottom();
   }, [messages]);
 
-  const createNewChat = () => {
-    const newSessionId = `session-${Date.now()}`;
-    setActiveSessionId(newSessionId);
-    setMessages([]);
-  };
-
-  const handleSelectSession = (sessionId: string) => {
-    setActiveSessionId(sessionId);
-    // In a real app, load messages for this session from storage
-    setMessages([]);
-  };
-
-  const handleDeleteSession = (sessionId: string) => {
-    setSessions((prev) => prev.filter((s) => s.id !== sessionId));
-    if (activeSessionId === sessionId) {
-      setActiveSessionId(null);
-      setMessages([]);
+  // Reset conversation when vendor changes
+  React.useEffect(() => {
+    if (conversationId && messages.length > 0) {
+      handleNewChat();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedVendor]);
+
+  const handleNewChat = () => {
+    setConversationId(null);
+    setMessages([]);
   };
 
   const handleSendMessage = async (content: string) => {
     if (!selectedVendor) return;
-    if (!activeSessionId) createNewChat();
 
-    const vendor = mockVendors.find((v) => v.id === selectedVendor);
-    if (!vendor) return;
-
+    // Add user message to UI immediately (optimistic update)
     const userMessage: EnhancedMessage = { role: "user", content };
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
-    // Update or create session
-    const sessionTitle =
-      content.length > 50 ? content.substring(0, 50) + "..." : content;
-    const currentSessionId = activeSessionId || `session-${Date.now()}`;
-
-    setSessions((prev) => {
-      const existingIndex = prev.findIndex((s) => s.id === currentSessionId);
-      const newSession: ChatSession = {
-        id: currentSessionId,
-        title: sessionTitle,
-        timestamp: new Date(),
-        preview: content,
-      };
-
-      if (existingIndex >= 0) {
-        const updated = [...prev];
-        updated[existingIndex] = newSession;
-        return updated;
-      }
-      return [newSession, ...prev];
-    });
-
-    if (!activeSessionId) {
-      setActiveSessionId(currentSessionId);
-    }
-
-    // Call API service (uses mock or real backend based on config)
     try {
       const apiVendorId = toApiVendorId(selectedVendor);
-      const aiResponse = await apiClient.sendSimpleMessage(content, apiVendorId);
-      setMessages((prev) => [...prev, aiResponse]);
+
+      // Create conversation on first message
+      if (!conversationId) {
+        const title = content.substring(0, 50);
+        const conversation = await apiClient.createConversation(apiVendorId, title);
+        setConversationId(conversation.id);
+
+        // Send first message
+        const response = await apiClient.sendMessageInConversation(
+          conversation.id,
+          content
+        );
+
+        // Replace user message with backend version and add assistant message
+        setMessages([
+          {
+            role: response.data.userMessage.role,
+            content: response.data.userMessage.content,
+            citations: response.data.userMessage.citations || undefined,
+            structuredData: response.data.userMessage.structuredData || undefined,
+          },
+          {
+            role: response.data.assistantMessage.role,
+            content: response.data.assistantMessage.content,
+            citations: response.data.assistantMessage.citations || undefined,
+            structuredData: response.data.assistantMessage.structuredData || undefined,
+          },
+        ]);
+      } else {
+        // Send message to existing conversation
+        const response = await apiClient.sendMessageInConversation(
+          conversationId,
+          content
+        );
+
+        // Add assistant message
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: response.data.assistantMessage.role,
+            content: response.data.assistantMessage.content,
+            citations: response.data.assistantMessage.citations || undefined,
+            structuredData: response.data.assistantMessage.structuredData || undefined,
+          },
+        ]);
+      }
     } catch (error) {
-      // Handle API errors gracefully
+      // Error handling
       const errorMessage: EnhancedMessage = {
         role: "assistant",
-        content: error instanceof ApiError
-          ? `Sorry, I encountered an error: ${error.message}. Please try again.`
-          : "Sorry, an unexpected error occurred. Please try again.",
+        content:
+          error instanceof ApiError
+            ? `Sorry, I encountered an error: ${error.message}`
+            : "An unexpected error occurred. Please try again.",
       };
       setMessages((prev) => [...prev, errorMessage]);
-      console.error('[Chat] API error:', error);
+      console.error("[Chat] Error sending message:", error);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const showWelcomeState = !activeSessionId && messages.length === 0;
+  const showWelcome = messages.length === 0;
 
   return (
-    <div className="h-screen bg-background flex overflow-hidden">
-      {/* Chat History Sidebar */}
-      <ChatHistorySidebar
-        sessions={sessions}
-        activeSessionId={activeSessionId}
-        onSelectSession={handleSelectSession}
-        onNewChat={createNewChat}
-        onDeleteSession={handleDeleteSession}
-      />
-
-      {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden">
-        {/* Header */}
-        <header className="border-b bg-card shadow-sm shrink-0">
-          <div className="container max-w-4xl mx-auto px-4 py-4">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <h1 className="text-2xl tracking-tight">
-                  Ask Questions from AI
-                </h1>
-                <p className="text-sm text-muted-foreground">
-                  Interactive assistant for detailed tenant insights
-                </p>
-              </div>
-              <div className="w-64">
+    <div className="h-screen flex flex-col bg-background">
+      {/* Premium Header with Context Bar */}
+      <header className="border-b border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-sm shrink-0">
+        <div className="container mx-auto px-4 py-3 md:py-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+            <div className="flex-1">
+              <h1
+                className="text-xl sm:text-2xl tracking-tight font-semibold"
+                style={{
+                  fontFamily: "Inter, var(--font-heading), system-ui, sans-serif",
+                  fontWeight: 600,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Ask Questions from AI
+              </h1>
+              {selectedVendor && (
+                <div className="flex items-center gap-2 mt-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Active context: <span className="font-medium text-gray-700">{selectedVendor}</span>
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <div className="flex-1 sm:w-64">
                 <VendorSelector
                   value={selectedVendor}
                   onValueChange={setSelectedVendor}
                 />
               </div>
+              {conversationId && (
+                <Button
+                  variant="outline"
+                  onClick={handleNewChat}
+                  className="hidden sm:flex rounded-xl border-gray-200/60 hover:bg-gray-50/80 transition-all"
+                >
+                  <Plus className="w-4 h-4 mr-2" />
+                  New Chat
+                </Button>
+              )}
             </div>
           </div>
-        </header>
-
-        {/* Chat Messages */}
-        <div className="flex-1 overflow-hidden">
-          <ScrollArea className="h-full">
-            {showWelcomeState ? (
-              <div className="container max-w-3xl mx-auto px-4 py-16">
-                <div className="text-center space-y-6">
-                  <div className="mx-auto w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-10 h-10 text-primary"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-3xl mb-3">Start a Conversation</h2>
-                    <p className="text-lg text-muted-foreground max-w-md mx-auto">
-                      {selectedVendor
-                        ? "Ask questions about tenant data and get AI-powered insights"
-                        : "Select a vendor from the dropdown above to begin"}
-                    </p>
-                  </div>
-                  {selectedVendor && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto mt-8">
-                      {[
-                        "What is the legal name of the tenant?",
-                        "What is the size of the Premises?",
-                        "Is there an Option to Renew and what is it?",
-                        "What are the Tenant's Responsibility to Repair?",
-                      ].map((suggestion, i) => (
-                        <button
-                          key={i}
-                          onClick={() => handleSendMessage(suggestion)}
-                          className="p-4 text-left border rounded-lg hover:bg-accent/50 transition-colors text-sm"
-                          style={{
-                            borderRadius: "var(--radius-md)",
-                            transition:
-                              "background-color var(--transition-fast)",
-                          }}
-                        >
-                          {suggestion}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="container max-w-4xl mx-auto px-4 py-8 pb-4">
-                <div className="space-y-6">
-                  {messages.map((message, index) => (
-                    <EnhancedChatMessage key={index} message={message} />
-                  ))}
-                  {isLoading && (
-                    <div className="flex justify-start">
-                      <div className="bg-muted rounded-lg px-6 py-4">
-                        <LoadingState />
-                      </div>
-                    </div>
-                  )}
-                  <div ref={messagesEndRef} />
-                </div>
-              </div>
-            )}
-          </ScrollArea>
         </div>
+      </header>
 
-        {/* Chat Input */}
-        <div className="border-t bg-background shrink-0">
+      {/* Main Content - Welcome or Messages */}
+      <div className="flex-1 overflow-hidden">
+        {showWelcome ? (
+          <ChatWelcome
+            selectedVendor={selectedVendor}
+            onSendMessage={handleSendMessage}
+            disabled={isLoading}
+          />
+        ) : (
+          <ScrollArea className="h-full">
+            <div className="container max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+              <div className="space-y-4 sm:space-y-6">
+                {messages.map((message, index) => (
+                  <EnhancedChatMessage key={index} message={message} />
+                ))}
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-muted rounded-lg px-4 sm:px-6 py-3 sm:py-4">
+                      <LoadingState />
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+            </div>
+          </ScrollArea>
+        )}
+      </div>
+
+      {/* Chat Input - Only show when NOT on welcome screen */}
+      {!showWelcome && (
+        <div className="shrink-0 border-t bg-card">
           <ChatInput
             onSendMessage={handleSendMessage}
-            disabled={isLoading || !selectedVendor}
+            disabled={!selectedVendor || isLoading}
           />
         </div>
-      </div>
+      )}
+
+      {/* Mobile FAB for new chat */}
+      {conversationId && (
+        <Button
+          onClick={handleNewChat}
+          className="fixed bottom-20 right-4 sm:hidden rounded-full w-14 h-14 shadow-lg"
+          size="icon"
+        >
+          <Plus className="w-6 h-6" />
+        </Button>
+      )}
     </div>
   );
 }

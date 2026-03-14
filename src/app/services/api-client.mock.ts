@@ -19,6 +19,8 @@ import type {
   VendorsResponse,
   HealthResponse,
   VendorId,
+  Conversation,
+  SendMessageResponse,
 } from '../types/api.types';
 import { ApiError } from './api-client.interface';
 import { generateEnhancedCustomResponse } from '../lib/enhanced-mock-responses';
@@ -124,6 +126,66 @@ export class MockApiClient implements IApiClient {
       services: {
         claude: true,
         database: true,
+      },
+    };
+  }
+
+  /**
+   * Create a new conversation (mock implementation)
+   */
+  async createConversation(vendorId: string, title?: string): Promise<Conversation> {
+    await this.delay(this.simulatedDelay);
+
+    // Generate a mock conversation ID
+    const conversationId = Date.now();
+
+    return {
+      id: conversationId,
+      vendorId,
+      userId: 'mock-user',
+      title: title || 'New Conversation',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      lastMessagePreview: null,
+      messageCount: 0,
+    };
+  }
+
+  /**
+   * Send a message in an existing conversation (mock implementation)
+   */
+  async sendMessageInConversation(
+    conversationId: number,
+    content: string
+  ): Promise<SendMessageResponse> {
+    await this.delay(this.simulatedDelay);
+
+    // Generate mock assistant response
+    const vendorName = "Chef Art Smith's Reunion"; // Default for mock
+    const assistantMessage = generateEnhancedCustomResponse(content, vendorName);
+
+    return {
+      success: true,
+      data: {
+        conversationId,
+        userMessage: {
+          id: Date.now(),
+          conversationId,
+          role: 'user',
+          content,
+          citations: null,
+          structuredData: null,
+          createdAt: new Date().toISOString(),
+        },
+        assistantMessage: {
+          id: Date.now() + 1,
+          conversationId,
+          role: 'assistant',
+          content: assistantMessage.content,
+          citations: assistantMessage.citations || null,
+          structuredData: assistantMessage.structuredData || null,
+          createdAt: new Date().toISOString(),
+        },
       },
     };
   }

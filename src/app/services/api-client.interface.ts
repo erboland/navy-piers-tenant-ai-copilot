@@ -16,6 +16,8 @@ import type {
   VendorsResponse,
   HealthResponse,
   VendorId,
+  Conversation,
+  SendMessageResponse,
 } from '../types/api.types';
 
 /**
@@ -55,6 +57,24 @@ export interface IApiClient {
    * @returns Promise resolving to health status
    */
   getHealth(): Promise<HealthResponse>;
+
+  /**
+   * Create a new conversation
+   *
+   * @param vendorId - Vendor identifier
+   * @param title - Optional conversation title
+   * @returns Promise resolving to conversation metadata
+   */
+  createConversation(vendorId: string, title?: string): Promise<Conversation>;
+
+  /**
+   * Send a message in an existing conversation
+   *
+   * @param conversationId - Conversation identifier
+   * @param content - Message content
+   * @returns Promise resolving to user and assistant messages
+   */
+  sendMessageInConversation(conversationId: number, content: string): Promise<SendMessageResponse>;
 }
 
 /**

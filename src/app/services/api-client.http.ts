@@ -21,6 +21,9 @@ import type {
   VendorId,
   ApiErrorResponse,
   ApiConfig,
+  Conversation,
+  ConversationResponse,
+  SendMessageResponse,
 } from '../types/api.types';
 import { ApiError } from './api-client.interface';
 
@@ -67,6 +70,32 @@ export class HttpApiClient implements IApiClient {
    */
   async getHealth(): Promise<HealthResponse> {
     return this.request<HealthResponse>('GET', '/health');
+  }
+
+  /**
+   * Create a new conversation
+   */
+  async createConversation(vendorId: string, title?: string): Promise<Conversation> {
+    const response = await this.request<ConversationResponse>(
+      'POST',
+      '/conversations',
+      { vendorId, title }
+    );
+    return response.data;
+  }
+
+  /**
+   * Send a message in an existing conversation
+   */
+  async sendMessageInConversation(
+    conversationId: number,
+    content: string
+  ): Promise<SendMessageResponse> {
+    return this.request<SendMessageResponse>(
+      'POST',
+      `/conversations/${conversationId}/messages`,
+      { content }
+    );
   }
 
   /**
