@@ -15,11 +15,11 @@ export function toApiVendorId(uiVendorId: string): VendorId {
   const mapping: Record<string, VendorId> = {
     '6': 'chef-art-smith',
     '7': 'billy-goat',
-    '8': 'navy-pier-parking',
+    '8': 'chicago-shakespeare',
     // Also support semantic IDs directly
     'chef-art-smith': 'chef-art-smith',
     'billy-goat': 'billy-goat',
-    'navy-pier-parking': 'navy-pier-parking',
+    'chicago-shakespeare': 'chicago-shakespeare',
   };
 
   const apiId = mapping[uiVendorId];
@@ -37,7 +37,7 @@ export function toUiVendorId(apiVendorId: VendorId): string {
   const mapping: Record<VendorId, string> = {
     'chef-art-smith': '6',
     'billy-goat': '7',
-    'navy-pier-parking': '8',
+    'chicago-shakespeare': '8',
   };
 
   return mapping[apiVendorId];

@@ -3,7 +3,7 @@
  *
  * Central export for API client service.
  * Automatically selects the correct implementation (mock or HTTP)
- * based on environment configuration.
+ * based on configuration.
  *
  * Usage in components:
  * ```typescript
@@ -16,26 +16,30 @@
  * ```
  *
  * To switch between mock and real API:
- * - Set VITE_USE_MOCK_API=true in .env for mock
- * - Set VITE_USE_MOCK_API=false in .env for real HTTP API
+ * - Edit IS_MOCKED in src/app/config.ts
+ * - true = mock mode (default, no backend required)
+ * - false = backend mode (connects to real API)
  */
 
 import type { IApiClient } from './api-client.interface';
 import { MockApiClient } from './api-client.mock';
 import { createHttpApiClient } from './api-client.http';
+import { IS_MOCKED } from '../config';
 
 /**
  * Get the appropriate API client based on configuration
  */
 function getApiClient(): IApiClient {
-  const useMock = import.meta.env.VITE_USE_MOCK_API !== 'false';
-
-  if (useMock) {
-    console.log('[API] Using mock API client');
+  if (IS_MOCKED) {
+    console.log('%c[API Mode] MOCK', 'background: #4ade80; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;');
+    console.log('→ Using mock data (no backend required)');
+    console.log('→ To switch: Edit IS_MOCKED in src/app/config.ts');
     return new MockApiClient();
   }
 
-  console.log('[API] Using HTTP API client');
+  console.log('%c[API Mode] BACKEND', 'background: #60a5fa; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;');
+  console.log('→ Connecting to backend API');
+  console.log('→ Backend must be running on http://localhost:3001');
   return createHttpApiClient();
 }
 

@@ -10,7 +10,7 @@ import type { EnhancedMessage } from '../components/enhanced-chat-message';
 /**
  * Vendor/Tenant identifier
  */
-export type VendorId = 'chef-art-smith' | 'billy-goat' | 'navy-pier-parking';
+export type VendorId = 'chef-art-smith' | 'billy-goat' | 'chicago-shakespeare';
 
 /**
  * API Request: Send a chat message
