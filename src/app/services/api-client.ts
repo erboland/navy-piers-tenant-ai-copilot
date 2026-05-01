@@ -15,10 +15,9 @@
  * );
  * ```
  *
- * To switch between mock and real API:
- * - Edit IS_MOCKED in src/app/config.ts
- * - true = mock mode (default, no backend required)
- * - false = backend mode (connects to real API)
+ * To switch between mock and real API, set `VITE_USE_MOCK_API` in `.env`:
+ * - true / unset = mock mode (no backend)
+ * - false = backend mode (`VITE_API_URL` must point at `/api/v1` or full API URL)
  */
 
 import type { IApiClient } from './api-client.interface';
@@ -33,13 +32,13 @@ function getApiClient(): IApiClient {
   if (IS_MOCKED) {
     console.log('%c[API Mode] MOCK', 'background: #4ade80; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;');
     console.log('→ Using mock data (no backend required)');
-    console.log('→ To switch: Edit IS_MOCKED in src/app/config.ts');
+    console.log('→ To switch: set VITE_USE_MOCK_API=false in .env');
     return new MockApiClient();
   }
 
   console.log('%c[API Mode] BACKEND', 'background: #60a5fa; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;');
   console.log('→ Connecting to backend API');
-  console.log('→ Backend must be running on http://localhost:3001');
+  console.log('→ Backend:', import.meta.env.VITE_API_URL || 'http://localhost:3001/api/v1');
   return createHttpApiClient();
 }
 
